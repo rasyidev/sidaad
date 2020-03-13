@@ -1,17 +1,23 @@
 <?php require 'app/app.php' ?>
 <!DOCTYPE html>
 <html>
+
 <head>
 
-  <meta charset="utf-8">
-  <title><?= $title ?></title>
-  <style><?= $styles ?></style>
+	<meta charset="utf-8">
+	<title><?= $title ?></title>
+	<style>
+		<?=$styles ?>
 
-  <link rel="icon" href="<?= $favicon ?>" type="image/png" />
+	</style>
+	<!-- <link rel="stylesheet" href="../assets/vendor/css/bootstrap.min.css"> ; -->
+	<link rel="icon" href="<?= $favicon ?>" type="image/png" />
 
 </head>
+
 <body>
-  <?php $surat = "templateSurat1.php" ?>
-  <?php createSurat($surat) ?>
+	<?php $surat = "templateSurat1.php"; ?>
+	<?php createSurat($surat) ?>
 </body>
+
 </html>

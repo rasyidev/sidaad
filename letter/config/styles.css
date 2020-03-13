@@ -1,1 +1,63 @@
 /* Customize the CSS here */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+hr{
+  margin: 0;
+  padding: 0;
+}
+.text-bold{
+  font-weight: bold;
+}
+
+.line-bold{
+  border: 2px solid black;
+}
+
+.text-center{
+  text-align: center;
+}
+
+.font14 {
+  font-size: 14pt;
+}
+
+.font16{
+  font-size: 16pt;
+}
+
+.mr-1{
+  margin-right: 10pt;
+}
+.mr-2{
+  margin-right: 20pt;
+}
+.mr-3{
+  margin-right: 30pt;
+}
+.mr-4{
+  margin-right: 40pt;
+}
+.mr-5{
+  margin-right: 50pt;
+}
+
+.ml-1{
+  margin-left: 10pt;
+}
+.ml-2{
+  margin-left: 20pt;
+}
+.ml-3{
+  margin-left: 30pt;
+}
+.ml-4{
+  margin-left: 40pt;
+}
+.ml-5{
+  margin-left: 50pt;
+}
