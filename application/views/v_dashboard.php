@@ -27,11 +27,18 @@
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
+<p class="ml-5">
+  <?php
+   $data = $this->session->get_userdata();
+  //  var_dump($data); die;
+  extract($data);
+   ?>
+</p>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
 
   <!-- Navbar -->
-  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light d-flex justify-content-between">
     <!-- Left navbar links -->
     <ul class="navbar-nav">
       <li class="nav-item">
@@ -42,9 +49,8 @@
       </li>
       
     </ul>
-   
       <li class="nav-item">
-        
+        <a href="<?=base_url('auth/logout') ?>">logout</a>
       </li>
     </ul>
   </nav>
