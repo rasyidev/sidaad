@@ -8,6 +8,8 @@ class Auth extends CI_Controller
     // kalo session masih ada
     if ($this->session->has_userdata('login')) {
       $this->_loginBack();
+      echo "ada session";
+      var_dump($this->session->get_userdata());
     }
 
     $data['title'] = "Halaman Login";
@@ -24,7 +26,7 @@ class Auth extends CI_Controller
 
   public function logout()
   {
-    $this->session->unset_userdata('username', 'login');
+    $this->session->unset_userdata('login', 'username');
     redirect('auth');
   }
 
@@ -44,7 +46,7 @@ class Auth extends CI_Controller
     if ($user['username'] == $username && $user['password'] == $password) {
       $data = array(
         'username' => $username,
-        'login' => 'administrator'
+        'login' => $user['role_id']
       );
       // var_dump($data);die;
       // echo "dashboard/index"; die;
