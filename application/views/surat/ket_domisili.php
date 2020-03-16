@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <meta charset="utf-8">
+<meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>SIDAAD JATIMULYO</title>
   <!-- Tell the browser to be responsive to screen width -->
@@ -18,44 +19,32 @@
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
-<body class="hold-transition login-page">
-<div class="login-box">
-  <div class="login-logo">
-    <a href="">SIDAAD JATIMULYO</a>
-  </div>
-  <!-- /.login-logo -->
-  <div class="card">
-    <div class="card-body login-card-body">
 
-      <form action="<?=base_url('dashboard/index') ?>" method="post">
-        <div class="input-group mb-3">
-          <input type="uname" class="form-control" placeholder="Username">
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-envelope"></span>
+<body class="hold-transition form-page">
+
+<br><br>
+  <div class="form-box">
+
+      <div class="card-body ">
+        <h1 class="register-logo">Form Surat Keterangan Domisili</h1>
+        <br>
+        
+        <!-- nanti oper aja dia mau buat surat apa cek dulu nik nya ada atau ga, kalo ga ada direct ke form -->
+        <form action="<?= base_url('almaker/ketDomisili/index.php') ?>" method="post" class="mt-4">
+            <div class="form-group col-sm-8">
+                <input type="text" class="form-control" name="nik" id="nik" aria-describedby="helpId" placeholder="Nomor Induk Kependudukan">
+            </div>  
+            
+            <div class="form-group col-sm-8">
+                <input type="text" class="form-control" name="sejak" id="sejak" aria-describedby="helpId" placeholder="Berdomisili Sejak">
             </div>
-          </div>
-        </div>
-        <div class="input-group mb-3">
-          <input type="password" class="form-control" placeholder="Password">
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-lock"></span>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-4">
-            <button type="submit" class="btn btn-primary btn-block">Masuk</button>
-          </div>
-          <!-- /.col -->
-        </div>
-      </form>
-    </div>
-    <!-- /.login-card-body -->
+        
+            <button type="submit" class="btn btn-primary">Buat Surat Keterangan Domisili</button>
+        </form>
+      </div>
+
   </div>
-</div>
-<!-- /.login-box -->
+</body>
 
 <!-- jQuery -->
 <script src="../../plugins/jquery/jquery.min.js"></script>
@@ -65,4 +54,5 @@
 <script src="../../dist/js/adminlte.min.js"></script>
 
 </body>
+
 </html>
