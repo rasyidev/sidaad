@@ -70,6 +70,9 @@
       </ul>
       <li class="nav-item">
         <a href="<?= base_url('auth/logout') ?>">logout</a>
+<<<<<<< HEAD
+>>>>>>> parent of beefb8b... Menambahkan fungsi tambah operator untuk admin
+=======
 >>>>>>> parent of beefb8b... Menambahkan fungsi tambah operator untuk admin
       </li>
       </ul>
