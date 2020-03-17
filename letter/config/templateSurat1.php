@@ -1,4 +1,7 @@
 <letter>
+	<?php 
+	var_dump($_POST);
+	 ?>
 	<div class="kop" style="display: flex; align-items: center; margin-bottom: 10pt">
 		<img src="<?= $logo ?>" height="80px" alt="" class="mr-4">
 		<div class="header">

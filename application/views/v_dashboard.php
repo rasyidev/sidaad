@@ -89,7 +89,7 @@ extract($data);
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="./index.html" class="nav-link">
+                  <a href="<?=base_url('surat/status') ?>" class="nav-link">
                     <p>Surat Keterangan Status</p>
                   </a>
                 </li>

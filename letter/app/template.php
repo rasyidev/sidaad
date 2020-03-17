@@ -1,5 +1,7 @@
 <letter>
-
+  <?php
+  var_dump($_POST);
+  ?>
   <header>
     <address>
       <img src="" alt="aaa">
