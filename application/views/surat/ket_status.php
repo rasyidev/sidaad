@@ -58,8 +58,8 @@
       <div class="form-group col-sm-8">
         <select class="form-control" name="status" id="status">
           <option value="" disabled selected>Status</option>
-          <option value="Kawin">Kawin</option>
-          <option value="Kawin">Belum Kawin</option>
+          <option value="Kawin"> Sudah Menikah</option>
+          <option value="Kawin">Belum Pernah Menikah</option>
         </select>
       </div>
       <div class="form-group col-sm-8">

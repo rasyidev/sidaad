@@ -18,7 +18,11 @@ class Dashboard extends CI_Controller{
   }
 
   public function admin(){
-    $this->load->view('v_dashboard_admin');
+    // Unset password to be viewed for reduce vulnarablity
+    $data['users'] = $this->M_Admin->getAllUser();
+    var_dump($data); die;
+    // open dashboard admin and send data to it
+    $this->load->view('v_dashboard_admin', $data);
   }
 
   public function operator(){

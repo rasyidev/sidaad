@@ -1,6 +1,6 @@
 <?php
 $data = $this->session->get_userdata();
-//  var_dump($data); die;
+ var_dump($users); die;
 extract($data);
 ?>
 <!DOCTYPE html>
