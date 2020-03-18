@@ -12,6 +12,17 @@ class BuatSurat extends CI_Controller{
   }
 
   public function status(){
+    if(isset($_POST['cari'])){
+      //get nik
+      $temp = $this->input->post();
+      $nik = $temp['nik'];
+
+      //get model
+      $data = $this->M_Operator->getAllData();
+      var_dump($data);
+    }else{
+      echo "data tidak tersedia";
+    }
     $this->load->view('surat/ket_status');
   }
 
