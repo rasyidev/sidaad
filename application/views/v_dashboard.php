@@ -89,37 +89,37 @@ extract($data);
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="<?=base_url('surat/status') ?>" class="nav-link">
+                  <a href="<?=base_url('BuatSurat/status') ?>" class="nav-link">
                     <p>Surat Keterangan Status</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="./index2.html" class="nav-link">
+                  <a href="<?= base_url('BuatSurat/usaha') ?>" class="nav-link">
                     <p>Surat Keterangan Izin Usaha</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="./index3.html" class="nav-link">
+                  <a href="<?= base_url('BuatSurat/skck') ?>" class="nav-link">
                     <p>SKCK</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="./index3.html" class="nav-link">
+                  <a href="<?= base_url('BuatSurat/keramaian') ?>" class="nav-link">
                     <p>Surat Izin Keramaian</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="./index3.html" class="nav-link">
+                  <a href="<?= base_url('BuatSurat/tidakmampu') ?>" class="nav-link">
                     <p>Surat Keterangan Tidak Mampu</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="./index3.html" class="nav-link">
+                  <a href="<?= base_url('BuatSurat/domisili') ?>" class="nav-link">
                     <p>Surat Keterangan Domisili</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="./index3.html" class="nav-link">
+                  <a href="<?= base_url('BuatSurat/penghasilan') ?>" class="nav-link">
                     <p>Surat Keterangan Penghasilan</p>
                   </a>
                 </li>

@@ -29,7 +29,7 @@
         <h1 class="register-logo">Form Data Diri</h1>
 
         <!-- nanti di base url nya get nama button yang sebelumnya di klik dari dashboard -->
-        <form action="<?= base_url('surat/status') ?>" method="post" class="mt-4">
+        <form action="<?= base_url('BuatSurat/status') ?>" method="post" class="mt-4">
 
           <h2 class="font-weight-bold mt-5">Data Pemohon</h2>
           <div class="form-group col-sm-8">
