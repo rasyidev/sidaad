@@ -2,6 +2,16 @@
 defined('BASEPATH') or exit('No direct script access allowed');
 
 class BuatSurat extends CI_Controller{
+  // public $data;
+  // public function __construct()
+  // {
+  //   global $data;
+  //   //buat list daftar pilihan untuk dimasukkan ke value form
+  //   $data['daftar_agama'] = ["Islam", "Kristen Protestan", "Katolik", "Hindu", "Budha", "Konghucu"];
+  //   $data['daftar_jkel'] = ["Laki - laki", "Perempuan"];
+  //   $data['daftar_status'] = ["Menikah", "Belum Menikah"];
+  // }
+
   public function keteranganStatus(){
     $data['surat'] = "Form Surat Keterangan Status";
     $this->load->view('surat/v_formKetStatus.php', $data);
@@ -11,19 +21,27 @@ class BuatSurat extends CI_Controller{
     $this->load->view('form');
   }
 
+  public function test(){
+    global $data;
+    var_dump($data);
+  }
+
   public function status(){
-    if(isset($_POST['cari'])){
+    global $data;
+    $data['daftar_agama'] = ["Islam", "Kristen Protestan", "Katolik", "Hindu", "Budha", "Konghucu"];
+    $data['daftar_jkel'] = ["Laki - laki", "Perempuan"];
+    $data['daftar_status'] = ["Menikah", "Belum Menikah"];
+    if(isset($_POST['btn_cari'])){
       //get nik
       $temp = $this->input->post();
-      $nik = $temp['nik'];
-
+      // var_dump($temp); die;
+      $data['btn_cari'] = $temp['btn_cari'];
       //get model
-      $data = $this->M_Operator->getAllData();
-      var_dump($data);
-    }else{
-      echo "data tidak tersedia";
+      $data['penduduk'] = $this->M_Operator->getAllData();
+      // var_dump($data);
     }
-    $this->load->view('surat/ket_status');
+    $this->load->view('surat/ket_status', $data);
+    // var_dump($data); die;
   }
 
   public function usaha(){
