@@ -31,18 +31,7 @@ class BuatSurat extends CI_Controller{
     $data['daftar_agama'] = ["Islam", "Kristen Protestan", "Katolik", "Hindu", "Budha", "Konghucu"];
     $data['daftar_jkel'] = ["Laki - laki", "Perempuan"];
     $data['daftar_status'] = ["Menikah", "Belum Menikah"];
-    // if(isset($_POST['btn_cari'])){
-    //   //get nik
-    //   $temp = $this->input->post();
-    //   // var_dump($temp); die;
-    //   $data['btn_cari'] = $temp['btn_cari'];
-    //   //get model
-    //   $data['penduduk'] = $this->M_Operator->getAllData();
-    //   // var_dump($data);
-    // }
-    // $this->load->view('surat/ket_status', $data);
-    // var_dump($data); die;
-    // var_dump($this->uri->segment(3)); die;
+
     if(($this->uri->segment(3))!=NULL){
       $nik = $this->uri->segment(3);
       // var_dump($nik);die;
