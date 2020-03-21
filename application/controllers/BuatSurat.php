@@ -3,7 +3,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class BuatSurat extends CI_Controller{
   // public $data;
-  // public function __construct()   
+  // public function __constr  uct()   
 
   public function keteranganStatus(){
     $data['nama_surat'] = "Form Surat Keterangan Status";
