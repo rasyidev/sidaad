@@ -5,11 +5,7 @@ class BuatSurat extends CI_Controller{
   // public $data;
   // public function __construct()
   // {
-  //   global $data;
-  //   //buat list daftar pilihan untuk dimasukkan ke value form
-  //   $data['daftar_agama'] = ["Islam", "Kristen Protestan", "Katolik", "Hindu", "Budha", "Konghucu"];
-  //   $data['daftar_jkel'] = ["Laki - laki", "Perempuan"];
-  //   $data['daftar_status'] = ["Menikah", "Belum Menikah"];
+
   // }
 
   public function keteranganStatus(){
