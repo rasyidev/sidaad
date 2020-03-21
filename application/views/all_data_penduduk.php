@@ -38,7 +38,7 @@
       </div>
     </div>
   <?php endif; ?>
-  <h1 class="text-center">Semua data penduduk</h1>
+  <h1 class="text-center">Semua Data Penduduk</h1>
   <div class="row">
     <div class="container col-10 col-md-8 justify-content-center">
       <table class="table table-hover table-bordered">
