@@ -27,7 +27,7 @@ class BuatSurat extends CI_Controller{
   }
 
   public function status(){
-    // global $data;
+    // global $data;   
     $data['daftar_agama'] = ["Islam", "Kristen Protestan", "Katolik", "Hindu", "Budha", "Konghucu"];
     $data['daftar_jkel'] = ["Laki - laki", "Perempuan"];
     $data['daftar_status'] = ["Menikah", "Belum Menikah"];
