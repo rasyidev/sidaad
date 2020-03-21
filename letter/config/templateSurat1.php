@@ -1,6 +1,7 @@
 <letter>
 	<?php
 $data = $_POST;
+	// var_dump($data);
 extract($data);
 	?>
 	<!-- Start KOP -->

@@ -2,6 +2,12 @@
 defined('BASEPATH') or exit('No direct script access allowed');
 
 class Dashboard extends CI_Controller{
+  public function __construct()
+  {
+    parent::__construct();
+    $this->load->library('form_validation');
+
+  }
   public function index(){
     // user filtering
     $data = $this->session->get_userdata();
@@ -29,4 +35,22 @@ class Dashboard extends CI_Controller{
 
     $this->load->view('v_dashboard');
   }
+
+  public function tambahDataOperator(){
+    $this->form_validation->set_rules('username', "Username", 'required');
+    $this->form_validation->set_rules('password', "Password", 'required');
+    $this->form_validation->set_rules('repassword', "Ulang Password", 'required|matches[password]');
+    if($this->form_validation->run()==FALSE){
+      $this->load->view('form/tambah_data_user');
+    }else{
+      $this->M_Admin->tambahUser();
+      $this->session->set_flashdata('flash', 'Berhasil');
+    }
+  }
+
+  public function tampilUser(){
+    $data['user'] = $this->M_Admin->getAllUser();
+    $this->load->view('v_tampil_user', $data);
+  }
+
 }

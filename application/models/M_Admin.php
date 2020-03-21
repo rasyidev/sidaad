@@ -10,4 +10,12 @@ class M_Admin extends CI_Model{
     $users = $this->db->get();
     return $users->result_array();
   }
+
+  public function tambahUser(){
+    $username = $this->input->post('username');
+    $password = $this->input->post('password');
+    $user_role = $this->input->post('user_role');
+    $data = ['user_id' => '', 'username' => $username, 'password' => $password, 'role_id' => $user_role];
+    $this->db->insert('users', $data);
+  }
 }

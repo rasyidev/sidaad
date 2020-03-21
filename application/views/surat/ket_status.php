@@ -37,18 +37,12 @@
 	<div class="container">
 		<div class="row justify-content-center">
 			<h1 class="text-center">Form Surat Keterangan Status</h1>
-			<form action="<?= base_url('BuatSurat/status') ?>" method="post" class="col col-10 col-md-8 d-flex pb-3">
-				<!-- <div class=" row"> -->
-				<input type="text" class="form-control col-10" name="nik" placeholder="Nomor Induk Kependudukan (NIK)">
-				<button type="submit" class="btn btn-outline-primary col-2" name="btn_cari">cari</button>
-				<!-- </div> -->
-			</form>
 			<form action="<?= base_url('letter/index-surat-1.php') ?>" method="post" class="col col-10 col-md-8">
 				<div class="form-group">
-					<input type="text" class="form-control" name="nama" id="" aria-describedby="helpId" placeholder="Nama Lengkap" value="<?php if(isset($btn_cari)){ echo $penduduk['nama']; } ?>">
+					<input type="text" class="form-control" name="nama" id="" aria-describedby="helpId" placeholder="Nama Lengkap" value="<?php if($this->uri->segment(3)==$penduduk['nik']){ echo $penduduk['nama']; } ?>">
 				</div>
 				<div class="form-group">
-					<input type="text" class="form-control" name="ttl" id="ttl" aria-describedby="helpId" placeholder="Tempat, Tanggal Lahir" value="<?php if(isset($btn_cari)){ echo $penduduk['ttl']; } ?>">
+					<input type="text" class="form-control" name="ttl" id="ttl" aria-describedby="helpId" placeholder="Tempat, Tanggal Lahir" value="<?php if($this->uri->segment(3)==$penduduk['nik']){ echo $penduduk['ttl']; } ?>">
 				</div>
 				<div class="form-group">
 					<select class="form-control" name="agama" id="agama">
@@ -75,7 +69,7 @@
 					</select>
 				</div>
 				<div class="form-group">
-					<input type="text" class="form-control" name="kewarganegaraan" id="kewarganegaraan" aria-describedby="helpId" placeholder="Warga Negara" value="<?php if(isset($btn_cari)){ echo $penduduk['kewarganegaraan']; } ?>">
+					<input type="text" class="form-control" name="kewarganegaraan" id="kewarganegaraan" aria-describedby="helpId" placeholder="Warga Negara" value="<?php if($this->uri->segment(3)==$penduduk['nik']){ echo $penduduk['kewarganegaraan']; } ?>">
 				</div>
 				<div class="form-group">
 					<select class="form-control" name="status" id="status">
@@ -90,10 +84,10 @@
 					</select>
 				</div>
 				<div class="form-group">
-					<input type="text" class="form-control" name="pekerjaan" id="pekerjaan" aria-describedby="helpId" placeholder="Pekerjaan" value="<?php if(isset($btn_cari)){ echo $penduduk['pekerjaan']; } ?>">
+					<input type="text" class="form-control" name="pekerjaan" id="pekerjaan" aria-describedby="helpId" placeholder="Pekerjaan" value="<?php if($this->uri->segment(3)==$penduduk['nik']){ echo $penduduk['pekerjaan']; } ?>">
 				</div>
 				<div class="form-group">
-					<input type="text" class="form-control" name="alamat" id="alamat" aria-describedby="helpId" placeholder="Alamat" value="<?php if(isset($btn_cari)){ echo $penduduk['alamat']; } ?>">
+					<input type="text" class="form-control" name="alamat" id="alamat" aria-describedby="helpId" placeholder="Alamat" value="<?php if($this->uri->segment(3)==$penduduk['nik']){ echo $penduduk['alamat']; } ?>">
 				</div>
 				<button type="submit" class="btn btn-primary">Buat Surat Keterangan Status</button>
 			</form>
