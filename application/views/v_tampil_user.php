@@ -1,15 +1,5 @@
 <?php
-// var_dump($penduduk);die;
-// var_dump($daftar_status);
 
-// foreach($daftar_agama as $a){
-// 	if($a == $penduduk['agama']){
-// 		echo "benar, ". $a ."sama dengan ". $penduduk['agama'];
-// 	}else{
-// 		echo "salah, " . $a . "sama dengan " . $penduduk['agama'];
-// 	}
-// }
-// var_dump($user);die;
 ?>
 <!DOCTYPE html>
 <html lang="en">
