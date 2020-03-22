@@ -185,7 +185,7 @@ extract($data);
               <a href="">
                 <div class="small-box bg-info">
                   <div class="inner">
-                    <h3>150</h3>
+                    <h3><?= $this->M_Admin->totalSurat() ?></h3>
 
                     <p>Jumlah Surat Terbuat</p>
                   </div>

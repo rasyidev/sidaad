@@ -22,6 +22,11 @@ class M_Admin extends CI_Model{
   public function totalPenduduk(){
     return $this->db->count_all_results('data_penduduk');
   }
+  public function totalSurat(){
+    return $this->db->count_all_results('transaksi');
+  }
+
+
 
 function bulan()
   {
