@@ -89,7 +89,7 @@ extract($data);
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="<?=base_url('BuatSurat/formCari') ?>" class="nav-link">
+                  <a href="<?= base_url('BuatSurat/formCari') ?>" class="nav-link">
                     <p>Surat Keterangan Status</p>
                   </a>
                 </li>
@@ -182,30 +182,34 @@ extract($data);
           <div class="row">
             <div class="col-lg-3 col-6">
               <!-- small box -->
-              <div class="small-box bg-info">
-                <div class="inner">
-                  <h3>150</h3>
+              <a href="">
+                <div class="small-box bg-info">
+                  <div class="inner">
+                    <h3>150</h3>
 
-                  <p>Jumlah Surat Terbuat</p>
+                    <p>Jumlah Surat Terbuat</p>
+                  </div>
+                  <div class="icon">
+                    <i class="ion ion-stats-bars"></i>
+                  </div>
                 </div>
-                <div class="icon">
-                  <i class="ion ion-stats-bars"></i>
-                </div>
-              </div>
+              </a>
             </div>
             <!-- ./col -->
             <div class="col-lg-3 col-6">
               <!-- small box -->
-              <div class="small-box bg-success">
-                <div class="inner">
-                  <h3>53<sup style="font-size: 20px">%</sup></h3>
+              <a href="<?= base_url('DataPenduduk') ?>">
+                <div class="small-box bg-success">
+                  <div class="inner">
+                    <h3><?= $this->M_Admin->totalPenduduk() ?><sup style="font-size: 20px"></sup></h3>
 
-                  <p>Data penduduk tersimpan</p>
+                    <p>Data penduduk tersimpan</p>
+                  </div>
+                  <div class="icon">
+                    <i class="ion ion-person-add"></i>
+                  </div>
                 </div>
-                <div class="icon">
-                  <i class="ion ion-person-add"></i>
-                </div>
-              </div>
+              </a>
             </div>
             <!-- /.row -->
 

@@ -49,8 +49,8 @@
           <select class="form-control" name="agama" id="agama">
             <option value="" disabled selected>Agama</option>
             <option value="Islam">Islam</option>
-            <option value="Kristen">Kristen</option>
-            <option value="Protestan">Protestan</option>
+            <option value="Kristen Protestan">Kristen Protestan</option>
+            <option value="Katolik">Katolik</option>
             <option value="Hindu">Hindu</option>
             <option value="Budha">Budha</option>
             <option value="Konghucu">Konghucu</option>
@@ -60,7 +60,7 @@
         <div class="form-group">
           <select class="form-control" name="jkel" id="jkel">
             <option value="" disabled selected>Jenis Kelamin</option>
-            <option value="Lakilaki">Laki-laki</option>
+            <option value="Laki - laki">Laki - laki</option>
             <option value="Perempuan">Perempuan</option>
           </select>
         </div>
@@ -76,8 +76,8 @@
         <div class="form-group">
           <select class="form-control" name="status" id="status">
             <option value="" disabled selected>Status</option>
-            <option value="kawin">Kawin</option>
-            <option value="belumkawin">Belum Kawin</option>
+            <option value="Menikah">Menikah</option>
+            <option value="Belum Menikah">Belum Menikah</option>
           </select>
         </div>
 

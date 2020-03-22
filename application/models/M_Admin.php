@@ -18,4 +18,8 @@ class M_Admin extends CI_Model{
     $data = ['user_id' => '', 'username' => $username, 'password' => $password, 'role_id' => $user_role];
     $this->db->insert('users', $data);
   }
+
+  public function totalPenduduk(){
+    return $this->db->count_all_results('data_penduduk');
+  }
 }
