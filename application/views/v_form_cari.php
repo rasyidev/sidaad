@@ -1,4 +1,5 @@
 <?php
+var_dump($jenis_surat);
 // var_dump($penduduk);die;
 // var_dump($daftar_status);
 
@@ -59,7 +60,7 @@
               <tr>
                 <td><?= $p['nik'] ?></td>
                 <td><?= $p['nama'] ?></td>
-                <td><a name="buat" id="buat" class="btn btn-primary btn-sm" href="<?= base_url('BuatSurat/status/') . $p['nik'] ?>" role="button">Buat Surat</a></td>
+                <td><a name="buat" id="buat" class="btn btn-primary btn-sm" href="<?= base_url('BuatSurat/') . $jenis_surat . "/" . $p['nik'] ?>" role="button">Buat Surat</a></td>
               </tr>
             <?php endforeach; ?>
           </tbody>

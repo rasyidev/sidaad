@@ -51,11 +51,10 @@ class DataPenduduk extends CI_Controller {
       if ($this->form_validation->run() == FALSE){
         $data['penduduk'] = $this->M_Operator->getSingleData($nik);
         $this->load->view('ubah_data_penduduk.php', $data);
-        // var_dump($data);
       }else{
         $this->M_Operator->ubahDataPenduduk();
         $this->session->set_flashdata('flash_ubah', 'Diubah');
-        // redirect('DataPenduduk');
+        redirect('DataPenduduk');
       }
     // }else{
     //   var_dump($this->uri->segment(3)); die;

@@ -29,11 +29,11 @@ class BuatSurat extends CI_Controller{
       $nik = $this->uri->segment(3);
       // var_dump($nik);die;
       // $data['penduduk']= $this->M_Operator->getAllData();
-      $data['penduduk']= $this->M_Operator->getData($nik);
+      $data['penduduk']= $this->M_Operator->getSingleData($nik);
+      $data['bulan'] = $this->M_Admin->bulan();
       // var_dump($data);die;
       if($data['penduduk']==null){
         echo "<script>alert('Nomor NIK tidak tersedia, tambah data penduduk?');</script>";
-        // redirect('DataPenduduk/tambah');
         $this->load->view('DataPenduduk/tambah', $data);
       }
       $this->load->view('surat/ket_status', $data);
@@ -71,6 +71,7 @@ class BuatSurat extends CI_Controller{
     $data['daftar_agama'] = ["Islam", "Kristen Protestan", "Katolik", "Hindu", "Budha", "Konghucu"];
     $data['daftar_jkel'] = ["Laki - laki", "Perempuan"];
     $data['daftar_status'] = ["Menikah", "Belum Menikah"];
+    $data['jenis_surat'] = $this->uri->segment(3);
 
     // if btn clicked and not empty
     if(isset($_POST['btn_cari']) && $_POST['key']!=''){

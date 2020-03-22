@@ -1,5 +1,10 @@
 <?php 
+// var_dump($_SESSION);
+// insert transaksi
+$trx_data = ['id_trx' => '', 'jenis_surat' => "Surat Keterangan Status", 'nik' => $penduduk['nik'], 'user_id' => $_SESSION['user_id'], 'created_at' => date('d-m-Y')];
+$this->db->insert('transaksi', $trx_data);
 // var_dump($penduduk);
+// var_dump($bulan);
 // var_dump($daftar_status);
 
 // foreach($daftar_agama as $a){

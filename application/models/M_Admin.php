@@ -22,4 +22,83 @@ class M_Admin extends CI_Model{
   public function totalPenduduk(){
     return $this->db->count_all_results('data_penduduk');
   }
+
+function bulan()
+  {
+    $bulan = Date('m');
+    switch ($bulan) {
+      case 1:
+        $bulan = "Januari";
+        break;
+      case 2:
+        $bulan = "Februari";
+        break;
+      case 3:
+        $bulan = "Maret";
+        break;
+      case 4:
+        $bulan = "April";
+        break;
+      case 5:
+        $bulan = "Mei";
+        break;
+      case 6:
+        $bulan = "Juni";
+        break;
+      case 7:
+        $bulan = "Juli";
+        break;
+      case 8:
+        $bulan = "Agustus";
+        break;
+      case 9:
+        $bulan = "September";
+        break;
+      case 10:
+        $bulan = "Oktober";
+        break;
+      case 11:
+        $bulan = "November";
+        break;
+      case 12:
+        $bulan = "Desember";
+        break;
+
+      default:
+        $bulan = Date('F');
+        break;
+    }
+    return $bulan;
+  }
+
+
+  // $month_number = date('n');
+  function romanMonth($number)
+  {
+    if ($number == 1) {
+      return "I";
+    } else if ($number == 2) {
+      return "II";
+    } else if ($number == 3) {
+      return "III";
+    } else if ($number == 4) {
+      return "IV";
+    } else if ($number == 5) {
+      return "V";
+    } else if ($number == 6) {
+      return "VI";
+    } else if ($number == 7) {
+      return "VII";
+    } else if ($number == 8) {
+      return "VIII";
+    } else if ($number == 9) {
+      return "IX";
+    } else if ($number == 10) {
+      return "X";
+    } else if ($number == 11) {
+      return "XI";
+    } else if ($number == 12) {
+      return "XII";
+    }
+  }
 }

@@ -28,7 +28,7 @@
   <div class="container m-auto">
     <div class="row justify-content-center">
       <h1>Form Ubah Data Penduduk</h1>
-      
+
       <!-- Alert validasi data -->
       <?php if (validation_errors()) : ?>
         <div class="alert alert-warning alert-dismissible fade show" role="alert">
@@ -61,9 +61,9 @@
 						<option value="Konghucu">Konghucu</option> -->
             <?php foreach ($agama as $a) : ?>
               <?php if ($penduduk['agama'] == $a) : ?>
-                <option value="<? $a ?>" selected><?= $a ?></option>
+                <option value="<?=$a ?>" selected><?= $a ?></option>
               <?php else : ?>
-                <option value="<? $a ?>"><?= $a ?></option>
+                <option value="<?=$a ?>"><?= $a ?></option>
               <?php endif; ?>
             <?php endforeach; ?>
           </select>
@@ -74,9 +74,9 @@
             <option value="" disabled selected>Jenis Kelamin</option>
             <?php foreach ($jkel as $a) : ?>
               <?php if ($penduduk['jkel'] == $a) : ?>
-                <option value="<? $a ?>" selected><?= $a ?></option>
+                <option value="<?=$a ?>" selected><?= $a ?></option>
               <?php else : ?>
-                <option value="<? $a ?>"><?= $a ?></option>
+                <option value="<?=$a ?>"><?= $a ?></option>
               <?php endif; ?>
             <?php endforeach; ?>
           </select>
@@ -87,9 +87,9 @@
             <option value="" disabled selected>Kewarganegaraan</option>
             <?php foreach ($kewarganegaraan as $a) : ?>
               <?php if ($penduduk['kewarganegaraan'] == $a) : ?>
-                <option value="<? $a ?>" selected><?= $a ?></option>
+                <option value="<?=$a ?>" selected><?= $a ?></option>
               <?php else : ?>
-                <option value="<? $a ?>"><?= $a ?></option>
+                <option value="<?=$a ?>"><?= $a ?></option>
               <?php endif; ?>
             <?php endforeach; ?>
           </select>
@@ -100,9 +100,9 @@
             <option value="" disabled selected>Status Pernikahan</option>
             <?php foreach ($status as $s) : ?>
               <?php if ($penduduk['status'] == $s) : ?>
-                <option value="<? $s ?>" selected><?= $s ?></option>
+                <option value="<?=$s ?>" selected><?= $s ?></option>
               <?php else : ?>
-                <option value="<? $s ?>"><?= $s ?></option>
+                <option value="<?=$s ?>"><?= $s ?></option>
               <?php endif; ?>
             <?php endforeach; ?>
           </select>

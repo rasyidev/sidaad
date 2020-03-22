@@ -1,4 +1,6 @@
-<?php require 'app/app.php' ?>
+<?php require 'app/app.php';
+$bulan = bulan();
+?>
 <!DOCTYPE html>
 <html>
 

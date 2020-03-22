@@ -51,4 +51,8 @@ class M_Operator extends CI_Model{
       $this->db->delete('data_penduduk', ['nik' => $nik]);
     }
   }
+
+  // public function transaksi($jenis_surat){
+  //   $
+  // }
 }
