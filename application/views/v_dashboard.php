@@ -109,7 +109,7 @@ extract($data);
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="<?= base_url('BuatSurat/tidakmampu') ?>" class="nav-link">
+                  <a href="<?= base_url('BuatSurat/formCari/sktm') ?>" class="nav-link">
                     <p>Surat Keterangan Tidak Mampu</p>
                   </a>
                 </li>

@@ -107,7 +107,7 @@ extract($data);
 
 	<div class="d-flex justify-content-end">
 		<div class="ttd text-center" contenteditable>
-			<p>Kutoarjo, <?= date('d') . ' ' . bulan() . ' ' . date('Y') ?></p>
+			<p>Jatimulyo, <?= date('d') . ' ' . bulan() . ' ' . date('Y') ?></p>
 			<p>Kepala Desa Jatimulyo</p>
 			<br>
 			<br>

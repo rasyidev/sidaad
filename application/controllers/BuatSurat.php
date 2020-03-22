@@ -54,8 +54,26 @@ class BuatSurat extends CI_Controller{
     $this->load->view('surat/izin_keramaian');
   }
 
-  public function tidakmampu(){
-    $this->load->view('surat/ket_tidakmampu');
+  public function sktm(){
+    $data['daftar_agama'] = ["Islam", "Kristen Protestan", "Katolik", "Hindu", "Budha", "Konghucu"];
+    $data['daftar_jkel'] = ["Laki - laki", "Perempuan"];
+    $data['daftar_status'] = ["Menikah", "Belum Menikah"];
+
+    if (($this->uri->segment(3)) != NULL) {
+      $nik = $this->uri->segment(3);
+      // var_dump($nik);die;
+      // $data['penduduk']= $this->M_Operator->getAllData();
+      $data['penduduk'] = $this->M_Operator->getSingleData($nik);
+      $data['bulan'] = $this->M_Admin->bulan();
+      // var_dump($data);die;
+      if ($data['penduduk'] == null) {
+        echo "<script>alert('Nomor NIK tidak tersedia, tambah data penduduk?');</script>";
+        $this->load->view('DataPenduduk/tambah', $data);
+      }
+      $this->load->view('surat/ket_tidakmampu', $data);
+    } else {
+      $this->load->view('surat/ket_tidakmampu', $data);
+    }
   }
 
   public function domisili(){

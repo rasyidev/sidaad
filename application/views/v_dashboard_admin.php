@@ -215,7 +215,7 @@ extract($data);
 							<a href="">
 								<div class="small-box bg-info">
 									<div class="inner">
-										<h3>150</h3>
+										<h3><?= $this->M_Admin->totalSurat() ?></h3>
 
 										<p>Jumlah Surat Terbuat</p>
 									</div>
@@ -231,7 +231,7 @@ extract($data);
 							<a href="<?= base_url('DataPenduduk') ?>">
 								<div class="small-box bg-success">
 									<div class="inner">
-										<h3><?=$this->M_Admin->totalPenduduk() ?><sup style="font-size: 20px"></sup></h3>
+										<h3><?= $this->M_Admin->totalPenduduk() ?><sup style="font-size: 20px"></sup></h3>
 
 										<p>Data penduduk tersimpan</p>
 									</div>
