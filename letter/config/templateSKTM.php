@@ -23,7 +23,7 @@
   </div>
   <div class="header text-center mt-1" contenteditable>
     <h1 class="bold-underlined" contenteditable>SURAT KETERANGAN TIDAK MAMPU</h1>
-    <p contenteditable>Nomor: 470.310.VII.08.08.<?= bulan() ?>.<?= date('Y') ?>
+    <p contenteditable>Nomor: 470.310.VII.08.08.<?= romanMonth() ?>.<?= date('Y') ?>
     </p>
   </div>
 

@@ -16,8 +16,7 @@
 	<!-- Ionicons -->
 	<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 	<!-- icheck bootstrap -->
-	<link rel="stylesheet"
-		href="<?= base_url('assets/vendor/adminlte') ?>plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+	<link rel="stylesheet" href="<?= base_url('assets/vendor/adminlte') ?>plugins/icheck-bootstrap/icheck-bootstrap.min.css">
 	<!-- Theme style -->
 	<link rel="stylesheet" href="<?= base_url('assets/vendor/') ?>css/adminlte.min.css">
 	<!-- Google Font: Source Sans Pro -->
@@ -26,31 +25,27 @@
 
 <body>
 	<div class="container">
-			<h1 class="text-center">Daftar User</h1>
-				<div class="container col-10 col-md-8 justify-content-center">
-					<table class="table table-hover table-bordered">
-						<thead>
-							<tr class="text-center">
-								<th width="30%">Username</th>
-								<th width="55%">Role</th>
-								<th width="15%">Aksi</th>
-							</tr>
-						</thead>
-						<tbody>
-							<?php foreach ($user as $p) : ?>
-							<tr>
-								<td><?= $p['username'] ?></td>
-								<td><?= $p['role_name'] ?></td>
-								<td><a name="buat" id="buat" class="btn btn-primary btn-sm"
-										href="<?= base_url('BuatSurat/status/') . $p['username'] ?>" role="button">Buat Surat</a></td>
-							</tr>
-							<?php endforeach; ?>
-						</tbody>
-					</table>
-				</div>
-		<div class="row justify-content-center">
-			<div class="row">
-			</div>
+		<h1 class="text-center">Daftar User</h1>
+		<div class="container col-10 col-md-8 justify-content-center">
+			<table class="table table-hover table-bordered">
+				<thead>
+					<tr class="text-center">
+						<th width="30%">Username</th>
+						<th width="45%">Role</th>
+						<th width="25%">Aksi</th>
+					</tr>
+				</thead>
+				<tbody>
+					<?php foreach ($user as $p) : ?>
+						<tr>
+							<td><?= $p['username'] ?></td>
+							<td><?= $p['role_name'] ?></td>
+							<td><a href="#" class="badge badge-success">detail</a> <a href="#" class="badge badge-warning">Ubah</a> <a href="#" class="badge badge-danger">Hapus</a></td>
+						</tr>
+					<?php endforeach; ?>
+				</tbody>
+			</table>
+			<a class="btn btn-primary" href="<?=base_url('dashboard') ?>" role="button">Kembali</a>
 		</div>
 	</div> <!-- Container  -->
 	<br><br>

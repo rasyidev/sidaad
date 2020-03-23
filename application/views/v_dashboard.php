@@ -135,6 +135,12 @@ extract($data);
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
+                  <a href="<?=base_url('dashboard') ?>" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Semua Surat</p>
+                  </a>
+                </li>
+                <li class="nav-item">
                   <a href="./index.html" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Perbulan</p>
@@ -182,7 +188,7 @@ extract($data);
           <div class="row">
             <div class="col-lg-3 col-6">
               <!-- small box -->
-              <a href="">
+              <a href="<?=base_url('dashboard/allLog') ?>">
                 <div class="small-box bg-info">
                   <div class="inner">
                     <h3><?= $this->M_Admin->totalSurat() ?></h3>
@@ -222,10 +228,9 @@ extract($data);
     </div>
     <!-- /.content-wrapper -->
     <footer class="main-footer">
-      <strong>Copyright &copy; 2014-2019 <a href="http://adminlte.io">AdminLTE.io</a>.</strong>
-      All rights reserved.
+      <strong>Made with <i class="fa fa-heart" aria-hidden="true"></i></a></strong>
       <div class="float-right d-none d-sm-inline-block">
-        <b>Version</b> 3.0.2
+        <b>Anon</b> Dev
       </div>
     </footer>
 

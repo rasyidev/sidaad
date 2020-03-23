@@ -1,7 +1,7 @@
 <?php
 $data = $this->session->get_userdata();
-var_dump($users);
-die;
+// var_dump($users);
+// die;
 extract($data);
 ?>
 <!DOCTYPE html>
@@ -136,7 +136,7 @@ extract($data);
 							</a>
 							<ul class="nav nav-treeview">
 								<li class="nav-item">
-									<a href="./index.html" class="nav-link">
+									<a href="<?=base_url('dashboard/tambahDataUser') ?>" class="nav-link">
 										<i class="fa fa-plus-circle" aria-hidden="true"></i>
 										<p>Tambah</p>
 									</a>
@@ -164,6 +164,12 @@ extract($data);
 								</p>
 							</a>
 							<ul class="nav nav-treeview">
+								<li class="nav-item">
+									<a href="<?= base_url('dashboard') ?>" class="nav-link">
+										<i class="far fa-circle nav-icon"></i>
+										<p>Semua Surat</p>
+									</a>
+								</li>
 								<li class="nav-item">
 									<a href="./index.html" class="nav-link">
 										<i class="far fa-circle nav-icon"></i>
@@ -236,7 +242,22 @@ extract($data);
 										<p>Data penduduk tersimpan</p>
 									</div>
 									<div class="icon">
-										<i class="ion ion-person-add"></i>
+										
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-lg-3 col-6">
+							<!-- small box -->
+							<a href="<?= base_url('dashboard/tampilUser') ?>">
+								<div class="small-box bg-warning">
+									<div class="inner">
+										<h3><?= $this->M_Admin->totalUser() ?><sup style="font-size: 20px"></sup></h3>
+
+										<p>Jumlah User</p>
+									</div>
+									<div class="icon">
+										
 									</div>
 								</div>
 							</a>

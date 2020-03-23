@@ -16,15 +16,35 @@ class M_Admin extends CI_Model{
     $password = $this->input->post('password');
     $user_role = $this->input->post('user_role');
     $data = ['user_id' => '', 'username' => $username, 'password' => $password, 'role_id' => $user_role];
+    // var_dump($data);die;
     $this->db->insert('users', $data);
   }
 
   public function totalPenduduk(){
     return $this->db->count_all_results('data_penduduk');
   }
+  public function totalUser(){
+    return $this->db->count_all_results('users');
+  }
   public function totalSurat(){
     return $this->db->count_all_results('transaksi');
   }
+
+  public function getAllLog(){
+    $this->db->select('nama, jenis_surat, created_at, username');
+    $this->db->from('users u');
+    $this->db->join('transaksi t', 'u.user_id=t.user_id');
+    $this->db->join('data_penduduk dp', 'dp.nik=t.nik');
+    $this->db->join('user_role ur', 'ur.role_id=u.role_id');
+    $this->db->order_by('created_at', 'desc');
+    
+    // $users = $this->db->get('users');
+    // $users = $this->db->query("");
+    $users = $this->db->get();
+    return $users->result_array();
+  }
+
+
 
 
 

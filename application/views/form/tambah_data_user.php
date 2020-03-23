@@ -32,7 +32,7 @@
           </button>
         </div>
       <?php endif; ?>
-      <form action="<?= base_url('dashboard/tambahDataOperator') ?>" method="post" class="col col-10 col-md-8 ">
+      <form action="<?= base_url('dashboard/tambahDataUser') ?>" method="post" class="col col-10 col-md-8 ">
         <div class="form-group">
           <input type="text" class="form-control" name="username" id="ttl" aria-describedby="helpId" placeholder="Username">
         </div>

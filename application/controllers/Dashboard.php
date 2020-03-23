@@ -26,7 +26,7 @@ class Dashboard extends CI_Controller{
   public function admin(){
     // Unset password to be viewed for reduce vulnarablity
     $data['users'] = $this->M_Admin->getAllUser();
-    var_dump($data); die;
+    // var_dump($data); die;
     // open dashboard admin and send data to it
     $this->load->view('v_dashboard_admin', $data);
   }
@@ -36,7 +36,7 @@ class Dashboard extends CI_Controller{
     $this->load->view('v_dashboard');
   }
 
-  public function tambahDataOperator(){
+  public function tambahDataUser(){
     $this->form_validation->set_rules('username', "Username", 'required');
     $this->form_validation->set_rules('password', "Password", 'required');
     $this->form_validation->set_rules('repassword', "Ulang Password", 'required|matches[password]');
@@ -44,13 +44,21 @@ class Dashboard extends CI_Controller{
       $this->load->view('form/tambah_data_user');
     }else{
       $this->M_Admin->tambahUser();
+      // echo "stop";die;
       $this->session->set_flashdata('flash', 'Berhasil');
+      redirect('dashboard/tampilUser');
     }
   }
 
   public function tampilUser(){
     $data['user'] = $this->M_Admin->getAllUser();
     $this->load->view('v_tampil_user', $data);
+  }
+
+  public function allLog(){
+    $data['allLog'] = $this->M_Admin->getAllLog();
+    // var_dump($data);die;
+    $this->load->view('v_tampil_all_log', $data);
   }
 
 }

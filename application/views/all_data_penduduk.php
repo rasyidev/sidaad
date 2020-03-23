@@ -85,6 +85,7 @@
           <?php endforeach; ?>
         </tbody>
       </table>
+      <a class="btn btn-primary my-1" href="<?= base_url('dashboard') ?>" role="button">Kembali</a>
     </div>
   </div>
 </body>
