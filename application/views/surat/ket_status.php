@@ -1,20 +1,5 @@
 <?php 
-// var_dump($_SESSION);
-// insert transaksi
-$trx_data = ['id_trx' => '', 'jenis_surat' => "Surat Keterangan Status", 'nik' => $penduduk['nik'], 'user_id' => $_SESSION['user_id'], 'created_at' => date('d-m-Y')];
-$this->db->insert('transaksi', $trx_data);
-// var_dump($penduduk);
-// var_dump($bulan);
-// var_dump($daftar_status);
 
-// foreach($daftar_agama as $a){
-// 	if($a == $penduduk['agama']){
-// 		echo "benar, ". $a ."sama dengan ". $penduduk['agama'];
-// 	}else{
-// 		echo "salah, " . $a . "sama dengan " . $penduduk['agama'];
-// 	}
-// }
-// die;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -42,7 +27,9 @@ $this->db->insert('transaksi', $trx_data);
 	<div class="container">
 		<div class="row justify-content-center">
 			<h1 class="text-center">Form Surat Keterangan Status</h1>
-			<form action="<?= base_url('letter/index-surat-1.php') ?>" method="post" class="col col-10 col-md-8">
+			<form action="<?= base_url('letter/index_ket_status.php') ?>" method="post" class="col col-10 col-md-8">
+				<input type="hidden" name="user_id" value="<?=$_SESSION['user_id'] ?>">
+				<input type="hidden" name="nik" value="<?=$penduduk['nik'] ?>">
 				<div class="form-group">
 					<input type="text" class="form-control" name="nama" id="" aria-describedby="helpId" placeholder="Nama Lengkap" value="<?php if($this->uri->segment(3)==$penduduk['nik']){ echo $penduduk['nama']; } ?>">
 				</div>
