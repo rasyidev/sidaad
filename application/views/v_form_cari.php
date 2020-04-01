@@ -37,7 +37,8 @@
 <body>
   <div class="container">
     <div class="row justify-content-center">
-      <h1 class="text-center">Form Surat Keterangan Status</h1>
+      <h1 class="text-center">Form Pembuatan Surat <?=$jenis_surat ?></h1>
+      <br>
       <form action="<?= base_url('BuatSurat/formCari') ?>" method="post" class="col col-10 col-md-8 d-flex pb-3">
         <!-- <div class=" row"> -->
         <input type="text" class="form-control col-10" name="key" placeholder="Masukkan kata kunci">

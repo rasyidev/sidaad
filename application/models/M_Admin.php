@@ -45,9 +45,6 @@ class M_Admin extends CI_Model{
   }
 
 
-
-
-
 function bulan()
   {
     $bulan = Date('m');

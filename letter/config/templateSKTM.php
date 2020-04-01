@@ -2,7 +2,19 @@
   <?php
   $data = $_POST;
   // var_dump($data);
+
+  $conn = mysqli_connect('localhost', 'root', '', 'sidaad');
   extract($data);
+  $date = date('d-m-Y');
+  $query = "INSERT INTO transaksi VALUES 
+    ('', 
+    'Surat Keterangan Tidak Mampu', 
+    '$nik', 
+    '$user_id', 
+    '$date'
+    )";
+  mysqli_query($conn, $query);
+
   ?>
   <!-- Start KOP -->
   <div class="kop" style="display: flex; align-items: center; margin-bottom: 10pt">
