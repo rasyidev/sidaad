@@ -21,6 +21,9 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
+    <img src="<?=base_url('assets/vendor/img/logo-lampsel-1.png') ?>" alt="" height="200px">
+    <br>
+    <br>
     <a href="">SIDAAD JATIMULYO</a>
   </div>
   <!-- /.login-logo -->

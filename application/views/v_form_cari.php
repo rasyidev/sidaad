@@ -11,6 +11,12 @@
 // 	}
 // }
 // die;
+if ($jenis_surat == "status"){
+  $jenis_surat_lengkap = "Surat Keterangan Belum Menikah";
+}else if ($jenis_surat == "sktm"){
+  $jenis_surat_lengkap = "Surat Keterangan Tidak Mampu";
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,7 +43,7 @@
 <body>
   <div class="container">
     <div class="row justify-content-center">
-      <h1 class="text-center">Form Surat Keterangan Status</h1>
+      <h1 class="text-center">Form <?=$jenis_surat_lengkap ?></h1>
       <form action="<?= base_url('BuatSurat/formCari') ?>" method="post" class="col col-10 col-md-8 d-flex pb-3">
         <!-- <div class=" row"> -->
         <input type="text" class="form-control col-10" name="key" placeholder="Masukkan kata kunci">

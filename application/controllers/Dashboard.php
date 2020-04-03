@@ -61,4 +61,9 @@ class Dashboard extends CI_Controller{
     $this->load->view('v_tampil_all_log', $data);
   }
 
+  public function hapusUser(){
+    $this->M_Admin->hapusUser();
+    redirect('dashboard/tampilUser');
+  }
+
 }

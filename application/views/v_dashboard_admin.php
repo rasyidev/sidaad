@@ -90,7 +90,7 @@ extract($data);
 							</a>
 							<ul class="nav nav-treeview">
 								<li class="nav-item">
-									<a href="<?= base_url('BuatSurat/status') ?>" class="nav-link">
+									<a href="<?= base_url('BuatSurat/formCari/status') ?>" class="nav-link">
 										<p>Surat Keterangan Status</p>
 									</a>
 								</li>
@@ -110,7 +110,7 @@ extract($data);
 									</a>
 								</li>
 								<li class="nav-item">
-									<a href="<?= base_url('BuatSurat/tidakmampu') ?>" class="nav-link">
+									<a href="<?= base_url('BuatSurat/formCari/sktm') ?>" class="nav-link">
 										<p>Surat Keterangan Tidak Mampu</p>
 									</a>
 								</li>
@@ -218,7 +218,7 @@ extract($data);
 					<div class="row">
 						<div class="col-lg-3 col-6">
 							<!-- small box -->
-							<a href="">
+							<a href="<?=base_url('dashboard/allLog') ?>">
 								<div class="small-box bg-info">
 									<div class="inner">
 										<h3><?= $this->M_Admin->totalSurat() ?></h3>

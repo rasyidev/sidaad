@@ -36,7 +36,6 @@ extract($data);
 
 <body class="hold-transition sidebar-mini layout-fixed">
   <div class="wrapper">
-
     <!-- Navbar -->
     <nav class="main-header navbar navbar-expand navbar-white navbar-light d-flex justify-content-between">
       <!-- Left navbar links -->
@@ -217,8 +216,8 @@ extract($data);
                 </div>
               </a>
             </div>
-            <!-- /.row -->
-
+          </div>  <!-- /.row -->
+        </div>
       </section>
       <!-- /.Left col -->
       <!-- right col (We are only adding the ID to make the widgets sortable)-->

@@ -20,6 +20,11 @@ class M_Admin extends CI_Model{
     $this->db->insert('users', $data);
   }
 
+  public function hapusUser(){
+    $user_id = $this->uri->segment(3);
+    $this->db->delete('users', array('user_id' => $user_id));
+  }
+
   public function totalPenduduk(){
     return $this->db->count_all_results('data_penduduk');
   }

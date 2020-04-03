@@ -27,6 +27,7 @@
 	<div class="container">
 		<h1 class="text-center">Daftar User</h1>
 		<div class="container col-10 col-md-8 justify-content-center">
+		<a name="" id="" class="btn btn-primary" href="<?=base_url('Dashboard/tambahUser') ?>" role="button">Tambah User</a>
 			<table class="table table-hover table-bordered">
 				<thead>
 					<tr class="text-center">
@@ -40,7 +41,7 @@
 						<tr>
 							<td><?= $p['username'] ?></td>
 							<td><?= $p['role_name'] ?></td>
-							<td><a href="#" class="badge badge-success">detail</a> <a href="#" class="badge badge-warning">Ubah</a> <a href="#" class="badge badge-danger">Hapus</a></td>
+							<td><a href="#" class="badge badge-success">detail</a> <a href="#" class="badge badge-warning">Ubah</a> <a href="<?=base_url('Dashboard/hapusUser/'). $p['user_id'] ?>" class="badge badge-danger">Hapus</a></td>
 						</tr>
 					<?php endforeach; ?>
 				</tbody>

@@ -25,7 +25,7 @@
 </head>
 
 <body>
-  <h1 class="text-center">Daftar Penduduk</h1>
+  <h1 class="text-center">Daftar User</h1>
   <div class="row">
     <div class="container col-10 col-md-8 justify-content-center">
 
@@ -49,7 +49,7 @@
           <?php endforeach; ?>
         </tbody>
       </table>
-      <a class="btn btn-primary my-1" href="<?= base_url('DataPenduduk') ?>" role="button">Kembali</a>
+      <a class="btn btn-primary my-1" href="<?= base_url('Dashboard') ?>" role="button">Kembali</a>
     </div>
   </div>
 </body>
