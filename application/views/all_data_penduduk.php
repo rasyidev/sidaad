@@ -50,7 +50,7 @@
             <tr>
               <th scope="col">NIK</th>
               <th scope="col">Nama</th>
-              <th scope="col">Aksi</th>
+              <th scope="col" width="20%">Aksi</th>
             </tr>
           </thead>
           <tfoot>

@@ -121,3 +121,29 @@ p{
 .justify-content-end{
   /* justify-content: end; */
 }
+
+@media only print {
+  .not-to-be-printed{
+    display: none;
+  }
+}
+
+.not-to-be-printed .dashboard{
+  	background-color: #5844c7;
+  	border-radius: 10px;
+  	border: 1px solid #3c29a3;
+  	display: inline-block;
+  	cursor: pointer;
+  	color: #ffffff;
+  	font-family: Arial;
+  	font-size: 17px;
+  	padding: 5px 31px;
+  	text-decoration: none;
+  	text-shadow: 0px 1px 0px #273366;
+    width: 100%;
+    text-align: center;
+
+}
+.not-to-be-printed .dashboard:hover {
+  	background-color: #422bc7;
+}

@@ -10,7 +10,6 @@ $bulan = bulan();
 	<title><?= $title ?></title>
 	<style>
 		<?=$styles ?>
-
 	</style>
 	<!-- <link rel="stylesheet" href="../assets/vendor/css/bootstrap.min.css"> ; -->
 	<!-- <link rel="stylesheet" href="..assets/vendor/css/style.css"> -->

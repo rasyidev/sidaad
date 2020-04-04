@@ -35,7 +35,7 @@
 				</select>
 			</div>
 			<div class="form-group">
-				<select class="form-control" name="jkel" id="jkel">
+				<select class="form-control" name="kewarganegaraan" id="kewarganegaraan">
 					<option value="" disabled selected>Kewarganegaraan</option>
 					<?php foreach ($kewarganegaraan as $a) : ?>
 						<?php if ($penduduk['kewarganegaraan']==$a) : ?>
