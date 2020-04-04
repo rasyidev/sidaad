@@ -1,4 +1,3 @@
-<letter>
   <?php
   $data = $_POST;
   // var_dump($data);
@@ -16,6 +15,10 @@
   mysqli_query($conn, $query);
 
   ?>
+  <div class="not-to-be-printed">
+    <a href="../dashboard" class="dashboard">Kembali ke Dashboard</a>
+  </div>
+<letter>
   <!-- Start KOP -->
   <div class="kop" style="display: flex; align-items: center; margin-bottom: 10pt">
     <img src="<?= $logo ?>" height="80px" alt="" class="mr-4">
