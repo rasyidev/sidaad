@@ -6,11 +6,24 @@ class DataPenduduk extends CI_Controller {
   {
     parent::__construct();
     $this->load->library('form_validation');
+    $GLOBALS['data'] = $this->_getInitialData();
+  }
+
+  private function _getInitialData()
+  {
+    $session_data = $this->session->get_userdata();
+    $data['username'] = $session_data['username'];
+    $data['nama_surat_lengkap'] = ["Ket. Belum Menikah", "Ket. Tidak Mampu", "Izin Usaha", "Izin Keramaian", "Ket. Domisili", "Ket. Penghasilan Ortu", "Pengantar SKCK"];
+    return $data;
   }
 
   public function index(){
+    global $data;
+    $data['title'] = "Daftar Penduduk";
     $data['penduduk'] = $this->M_Operator->getAllData();
+    $this->load->view('templates/header_template', $data);
     $this->load->view('all_data_penduduk', $data);
+    $this->load->view('templates/footer_template', $data);
   }
 
   public function tambah(){

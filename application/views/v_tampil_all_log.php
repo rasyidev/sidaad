@@ -2,7 +2,7 @@
   <!-- DataTales Example -->
   <div class="card shadow mb-4 col-12">
     <div class="card-header py-3">
-      <h6 class="m-0 font-weight-bold text-primary">Daftar Mobil Dan Pemilik</h6>
+      <h6 class="m-0 font-weight-bold text-primary">Daftar Pembuatan Surat</h6>
     </div>
     <div class="card-body">
       <div class="table-responsive table-hover table-sm">

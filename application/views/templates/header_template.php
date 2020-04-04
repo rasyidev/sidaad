@@ -41,7 +41,7 @@
           <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-          <a href="index3.html" class="nav-link">Home</a>
+          <a href="<?=base_url('dashboard') ?>" class="nav-link">Home</a>
         </li>
 
       </ul>
@@ -55,7 +55,7 @@
     <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
       <!-- Brand Logo -->
-      <a href="index3.html" class="brand-link d-flex align-items-center px-1 pr-2 justify-content-around">
+      <a href="<?=base_url('dashboard') ?>" class="brand-link d-flex align-items-center px-1 pr-2 justify-content-around">
         <img src="<?= base_url('assets/vendor/') ?>img/logo-lampsel-1.png" alt="" style="height: 50px">
         <span class="brand-text font-font-weight-bolder">SIDAAD Jatimulyo</span>
       </a>
@@ -75,6 +75,7 @@
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
+
             <li class="nav-item has-treeview menu-open">
               <a href="#" class="nav-link active">
                 <i class="nav-icon fas fa-copy"></i>
@@ -83,42 +84,33 @@
                   <i class="right fas fa-angle-left"></i>
                 </p>
               </a>
+
               <ul class="nav nav-treeview">
-                <li class="nav-item">
-                  <a href="<?= base_url('BuatSurat/formCari/status') ?>" class="nav-link">
-                    <p>Surat Keterangan Status</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="<?= base_url('BuatSurat/usaha') ?>" class="nav-link">
-                    <p>Surat Keterangan Izin Usaha</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="<?= base_url('BuatSurat/skck') ?>" class="nav-link">
-                    <p>SKCK</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="<?= base_url('BuatSurat/keramaian') ?>" class="nav-link">
-                    <p>Surat Izin Keramaian</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="<?= base_url('BuatSurat/formCari/sktm') ?>" class="nav-link">
-                    <p>Surat Keterangan Tidak Mampu</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="<?= base_url('BuatSurat/domisili') ?>" class="nav-link">
-                    <p>Surat Keterangan Domisili</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="<?= base_url('BuatSurat/penghasilan') ?>" class="nav-link">
-                    <p>Surat Keterangan Penghasilan</p>
-                  </a>
-                </li>
+                <?php foreach ($nama_surat_lengkap as $surat) : ?>
+                  <?php $inisial_surat = '';
+                  if($surat == "Ket. Belum Menikah"){
+                    $inisial_surat = "ketStatus";
+                  }elseif($surat=="Ket. Tidak Mampu"){
+                    $inisial_surat = "sktm";
+                  }elseif($surat== "Izin Usaha"){
+                    $inisial_surat = "izinUsaha";
+                  }elseif ($surat == "Izin Keramaian"){
+                    $inisial_surat = "izinKeramaian";
+                  }elseif($surat == "Ket. Domisili"){
+                    $inisial_surat = "ketDomisili";
+                  }elseif($surat == "Ket. Penghasilan Ortu"){
+                    $inisial_surat = "ketPenghasilanOrtu";
+                  }elseif($surat == "Pengantar SKCK"){
+                    $inisial_surat = "pengantarSKCK";
+                  }else{
+                    // redirect('dashboard');
+                  } ?>
+                  <li class="nav-item">
+                    <a href="<?=base_url('BuatSurat/formCari/') . $inisial_surat ?>" class="nav-link">
+                      <p><?= $surat ?></p>
+                    </a>
+                  </li>
+                <?php endforeach; ?>               
               </ul>
             </li>
             <li class="nav-item has-treeview">

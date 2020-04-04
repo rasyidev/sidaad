@@ -2,12 +2,21 @@
 defined('BASEPATH') or exit('No direct script access allowed');
 
 class Dashboard extends CI_Controller{
+
   public function __construct()
   {
     parent::__construct();
     $this->load->library('form_validation');
-
+    $GLOBALS['data'] = $this->_getInitialData();
   }
+
+  private function _getInitialData(){
+    $session_data = $this->session->get_userdata();
+    $data['nama_surat_lengkap'] = ["Ket. Belum Menikah", "Ket. Tidak Mampu", "Izin Usaha", "Izin Keramaian", "Ket. Domisili", "Ket. Penghasilan Ortu", "Pengantar SKCK"];
+    $data['username'] = $session_data['username'];
+    return $data;
+  }
+
   public function index(){
     // user filtering
     $data = $this->session->get_userdata();
@@ -24,6 +33,7 @@ class Dashboard extends CI_Controller{
   }
 
   public function admin(){
+    global $data;
     // Unset password to be viewed for reduce vulnarablity
     $data['users'] = $this->M_Admin->getAllUser();
     // var_dump($data); die;
@@ -32,8 +42,7 @@ class Dashboard extends CI_Controller{
   }
 
   public function operator(){
-    $session_data = $this->session->get_userdata();
-    $data['username'] = $session_data['username'];
+    global $data;
     $data['title'] = "Dashboard Operator";
     $this->load->view('templates/header_template', $data);
     $this->load->view('v_dashboard');
@@ -41,6 +50,7 @@ class Dashboard extends CI_Controller{
   }
 
   public function tambahDataUser(){
+    global $data;
     $this->form_validation->set_rules('username', "Username", 'required');
     $this->form_validation->set_rules('password', "Password", 'required');
     $this->form_validation->set_rules('repassword', "Ulang Password", 'required|matches[password]');
@@ -55,11 +65,16 @@ class Dashboard extends CI_Controller{
   }
 
   public function tampilUser(){
+    global $data;
     $data['user'] = $this->M_Admin->getAllUser();
+    $data['title'] = "Daftar User";
+    $this->load->view('templates/header_template', $data);
     $this->load->view('v_tampil_user', $data);
+    $this->load->view('templates/footer_template');
   }
 
   public function allLog(){
+    global $data;
     $session_data = $this->session->get_userdata();
     $data['username'] = $session_data['username'];
     $data['allLog'] = $this->M_Admin->getAllLog();

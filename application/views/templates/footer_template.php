@@ -26,6 +26,8 @@
 	<script src="<?= base_url('assets/vendor/adminlte/') ?>dist/js/pages/dashboard.js"></script>
 	<!-- AdminLTE for demo purposes -->
 	<script src="<?= base_url('assets/vendor/adminlte/') ?>dist/js/demo.js"></script>
+	<!-- overlayScrollbar -->
+	<script src="<?=base_url('assets/vendor/adminlte/') ?>plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 
 	<!-- Data Tables -->
 	<script src="<?= base_url('assets') ?>/vendor/datatables/jquery.dataTables.min.js"></script>
