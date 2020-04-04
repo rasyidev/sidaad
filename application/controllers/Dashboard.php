@@ -32,8 +32,12 @@ class Dashboard extends CI_Controller{
   }
 
   public function operator(){
-
+    $session_data = $this->session->get_userdata();
+    $data['username'] = $session_data['username'];
+    $data['title'] = "Dashboard Operator";
+    $this->load->view('templates/header_template', $data);
     $this->load->view('v_dashboard');
+    $this->load->view('templates/footer_template');
   }
 
   public function tambahDataUser(){
@@ -56,9 +60,14 @@ class Dashboard extends CI_Controller{
   }
 
   public function allLog(){
+    $session_data = $this->session->get_userdata();
+    $data['username'] = $session_data['username'];
     $data['allLog'] = $this->M_Admin->getAllLog();
+    $data['title'] = "Log Surat Lengkap";
     // var_dump($data);die;
+    $this->load->view('templates/header_template', $data);
     $this->load->view('v_tampil_all_log', $data);
+    $this->load->view('templates/footer_template');
   }
 
   public function hapusUser(){

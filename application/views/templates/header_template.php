@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 3 | Dashboard</title>
+  <title><?= $title ?></title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Font Awesome -->
@@ -27,6 +27,8 @@
   <link rel="stylesheet" href="<?= base_url('assets/vendor/adminlte/') ?>plugins/summernote/summernote-bs4.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+  <link href="<?= base_url('assets') ?>/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -53,9 +55,9 @@
     <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
       <!-- Brand Logo -->
-      <a href="index3.html" class="brand-link d-flex align-items-center pl-2 pr-2 justify-content-between">
-        <i class="fas fa-file-signature    "></i>
-        <span class="brand-text font-font-weight-bolder">SIDAAD</span>
+      <a href="index3.html" class="brand-link d-flex align-items-center px-1 pr-2 justify-content-around">
+        <img src="<?= base_url('assets/vendor/') ?>img/logo-lampsel-1.png" alt="" style="height: 50px">
+        <span class="brand-text font-font-weight-bolder">SIDAAD Jatimulyo</span>
       </a>
 
 
@@ -64,7 +66,7 @@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
           <div class="info">
-            <a href="#" class="d-block"> user <span class="badge badge-primary">operator</span></a>
+            <a href="#" class="d-block"> <?= $username ?> <span class="badge badge-primary">operator</span></a>
           </div>
         </div>
 

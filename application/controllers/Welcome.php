@@ -20,8 +20,9 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
+		$data['session'] = $this->session->get_userdata('username');
 		$this->load->view('templates/header_template');
-		$this->load->view('welcome_message');
+		$this->load->view('welcome_message', $data);
 		$this->load->view('templates/footer_template');
 	}
 }
