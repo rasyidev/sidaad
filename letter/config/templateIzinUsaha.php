@@ -35,8 +35,8 @@
 			<!-- End KOP -->
 		</div>
 		<div class="header text-center mt-1" contenteditable>
-			<h1 class="bold-underlined font14" contenteditable>SURAT KETERANGAN BELUM MENIKAH</h1>
-			<p contenteditable>Nomor: 470.447.VII.08.08.<?= romanMonth() ?>.<?= date('Y') ?>
+			<h1 class="bold-underlined font14" contenteditable>SURAT KETERANGAN USAHA</h1>
+			<p contenteditable>Nomor: 510.511.VII.08.08.<?= romanMonth() ?>.<?= date('Y') ?>
 			</p>
 		</div>
 
@@ -46,7 +46,7 @@
 			<table class="mt-1">
 				<tr height="12px">
 					<td width="200px">
-						<p>&#9675; Nama</p>
+						<p>Nama</p>
 					</td>
 					<td>
 						<p>: <?= $nama ?></p>
@@ -54,15 +54,7 @@
 				</tr>
 				<tr>
 					<td width="200px">
-						<p>&#9675; Jenis Kelamin</p>
-					</td>
-					<td>
-						<p>: <?= $jkel ?></p>
-					</td>
-				</tr>
-				<tr>
-					<td width="200px">
-						<p>&#9675; Tempat, Tanggal Lahir</p>
+						<p>Tempat, Tanggal Lahir</p>
 					</td>
 					<td>
 						<p>: <?= $ttl ?></p>
@@ -70,7 +62,23 @@
 				</tr>
 				<tr>
 					<td width="200px">
-						<p>&#9675; Warga Negara</p>
+						<p>Jenis Kelamin</p>
+					</td>
+					<td>
+						<p>: <?= $jkel ?></p>
+					</td>
+				</tr>
+				<tr>
+					<td width="200px">
+						<p>Status Perkawinan</p>
+					</td>
+					<td>
+						<p>: <?= $status ?></p>
+					</td>
+				</tr>
+				<tr>
+					<td width="200px">
+						<p>Warga Negara</p>
 					</td>
 					<td>
 						<p>: <?= $kewarganegaraan ?></p>
@@ -78,24 +86,7 @@
 				</tr>
 				<tr>
 					<td width="200px">
-						<p>&#9675; Agama</p>
-					</td>
-					<td>
-						<p>: <?= $agama ?></p>
-					</td>
-				</tr>
-				<tr>
-					<td width="200px">
-						<p>&#9675; Status Perkawinan</p>
-					</td>
-					<td>
-						<p>: <?= $status ?></p>
-					</td>
-				</tr>
-
-				<tr>
-					<td width="200px">
-						<p>&#9675; Pekerjaan</p>
+						<p>Pekerjaan</p>
 					</td>
 					<td>
 						<p>: <?= $pekerjaan ?></p>
@@ -103,7 +94,7 @@
 				</tr>
 				<tr>
 					<td width="200px">
-						<p>&#9675; Alamat</p>
+						<p>Alamat</p>
 					</td>
 					<td>
 						<p>: <?= $alamat ?></p>
@@ -114,9 +105,13 @@
 
 		<br>
 		<br>
-		<p contenteditable="">Adalah benar warga desa kami yang berdomisili dengan alamat tersebut diatas, berdasarkan dari laporan pamong setempat dan juga pengamatan kami warga kami tersebut benar Belum Pernah Menikah (Jejaka/Perawan).
+		<p contenteditable="">Adalah benar-benar warga kami yang berdomisili dengan alamat tersebut diatas berdasarkan dari pengamatan kami serta laporan dari Ketua RT setempat yang bersangkutan berprofesi/memiliki usaha :
 		</p>
-		<p contenteditable class="mt-1">Demikian Surat Keterangan ini kami berikan agar kiranya dapat dipergunakan sebagaimana mestinya.</p>
+		<p contenteditable class="bold-underlined text-center"><?= $nama_usaha ?></p>
+		<p contenteditable class="mt-1">Dengan lokasi usaha di: <?= $alamat_usaha ?></p>
+		<br>
+		<p contenteditable>Demikian surat keterangan Usaha ini kami buat dengan sebenarnya agar kiranya dapat digunakan sebagaimana mestinya.
+		</p>
 		<br>
 		<div class="d-flex justify-content-end">
 			<div class="ttd text-center" contenteditable>

@@ -10,13 +10,13 @@ class BuatSurat extends CI_Controller{
     $GLOBALS['data'] = $this->_getInitialData();
   }
 
-  private function _getInitialData(){
+  private function _getInitialData(){ 
     $session_data = $this->session->get_userdata();
     $data['username'] = $session_data['username'];
     $data['nama_surat_lengkap'] = ["Ket. Belum Menikah", "Ket. Tidak Mampu", "Izin Usaha", "Izin Keramaian", "Ket. Domisili", "Ket. Penghasilan Ortu", "Pengantar SKCK"];
     $data['daftar_agama'] = ["Islam", "Kristen Protestan", "Katolik", "Hindu", "Budha", "Konghucu"];
     $data['daftar_jkel'] = ["Laki - laki", "Perempuan"];
-    $data['daftar_status'] = ["Menikah", "Belum Menikah"];
+    $data['daftar_status'] = ["Kawin", "Belum Kawin", "Cerai Hidup", "Cerai Mati"];
     $data['kewarganegaraan'] = ["Indonesia", "Warga Negara Asing"];
     $data['role'] = ($session_data['login'] == "1") ? "Administrator" : "Operator";
     return $data;
@@ -50,7 +50,12 @@ class BuatSurat extends CI_Controller{
 
   public function izinUsaha(){
     global $data;
-    $this->load->view('surat/ket_izinusaha');
+    $nik = $this->uri->segment(3);
+    $data['penduduk'] = $this->M_Operator->getSingleData($nik);
+    $data['title'] = "Buat Surat Keterangan Izin Usaha";
+    $this->load->view('templates/header_template', $data);
+    $this->load->view('surat/ket_izinusaha', $data);
+    $this->load->view('templates/footer_template');
   }
 
   public function skck(){

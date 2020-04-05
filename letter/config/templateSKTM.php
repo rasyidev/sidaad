@@ -37,7 +37,7 @@
     <!-- End KOP -->
   </div>
   <div class="header text-center mt-1" contenteditable>
-    <h1 class="bold-underlined" contenteditable>SURAT KETERANGAN TIDAK MAMPU</h1>
+    <h1 class="bold-underlined font14" contenteditable>SURAT KETERANGAN TIDAK MAMPU</h1>
     <p contenteditable>Nomor: 470.310.VII.08.08.<?= romanMonth() ?>.<?= date('Y') ?>
     </p>
   </div>
@@ -89,7 +89,7 @@
   <p contenteditable class="mt-1">
     Demikian Surat Keterangan Tidak Mampu ini dibuat dengan sebenar-benarnya agar kiranya dapat digunakan sebagaimana mestinya.
   </p>
-
+  <br>
   <div class="d-flex justify-content-end">
     <div class="ttd text-center" contenteditable>
       <p>Jatimulyo, <?= date('d') . ' ' . bulan() . ' ' . date('Y') ?></p>

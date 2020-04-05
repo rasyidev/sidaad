@@ -53,8 +53,10 @@
       <div class="form-group">
         <select class="form-control" name="status" id="status">
           <option value="" disabled selected>Status</option>
-          <option value="Menikah">Menikah</option>
-          <option value="Belum Menikah">Belum Menikah</option>
+          <option value="Kawin">Kawin</option>
+          <option value="Belum Kawin">Belum Kawin</option>
+          <option value="Cerai Hidup">Cerai Hidup</option>
+          <option value="Cerai Mati">Cerai Mati</option>
         </select>
       </div>
 

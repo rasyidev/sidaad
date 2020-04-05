@@ -15,7 +15,7 @@ class DataPenduduk extends CI_Controller {
     $data['username'] = $session_data['username'];
     $data['nama_surat_lengkap'] = ["Ket. Belum Menikah", "Ket. Tidak Mampu", "Izin Usaha", "Izin Keramaian", "Ket. Domisili", "Ket. Penghasilan Ortu", "Pengantar SKCK"];
     $data['agama'] = ["Islam", "Kristen Protestan", "Katolik", "Hindu", "Budha", "Konghucu"];
-    $data['status'] = ["Menikah", "Belum Menikah"];
+    $data['daftar_status'] = ["Kawin", "Belum Kawin", "Cerai Hidup", "Cerai Mati"];
     $data['jkel'] = ["Laki - laki", "Perempuan"];
     $data['kewarganegaraan'] = ["Indonesia", "Warga Negara Asing"];
     $data['role'] = ($session_data['login'] == "1") ? "Administrator" : "Operator";
