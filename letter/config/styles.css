@@ -23,9 +23,18 @@ p{
 .line-bold{
   border: 2px solid black;
 }
+.uppercase{
+  text-transform: uppercase;
+}
+
 
 .text-center{
   text-align: center;
+}
+
+.text-box{
+  width: 180px;
+  height: auto;
 }
 
 .font14 {
@@ -84,6 +93,9 @@ p{
   margin-left: 50pt;
 }
 
+.mt-05{
+  margin-top: 4pt;
+}
 .mt-1{
   margin-top: 10pt;
 }
@@ -114,12 +126,25 @@ p{
 
 .d-flex{
   display: flex;
-  justify-content: flex-end;
-  text-align: right;
+  /* justify-content: flex-end; */
+  /* text-align: right; */
 }
 
+
 .justify-content-end{
-  /* justify-content: end; */
+  justify-content: flex-end;
+}
+
+.justify-between{
+  justify-content: space-between;
+}
+
+.justify-around{
+  justify-content: space-around;
+}
+
+.justify-center{
+  justify-content: center;
 }
 
 @media only print {
@@ -146,4 +171,9 @@ p{
 }
 .not-to-be-printed .dashboard:hover {
   	background-color: #422bc7;
+}
+
+.border-red{
+  border: 1px solid red;
+  box-sizing: border-box;
 }

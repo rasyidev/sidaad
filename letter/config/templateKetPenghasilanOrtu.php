@@ -5,7 +5,7 @@
 	$date = date('d-m-Y');
 	$query = "INSERT INTO transaksi VALUES 
 			('', 
-			'Surat Keterangan Status Pernikahan', 
+			'Surat Keterangan Penhasilan Orangtua', 
 			'$nik', 
 			'$user_id', 
 			'$date'
@@ -15,7 +15,7 @@
 	<div class="not-to-be-printed">
 		<a href="../dashboard" class="dashboard">Kembali ke Dashboard</a>
 	</div>
-
+	z
 	<letter>
 		<!-- Start KOP -->
 		<div class="kop" style="display: flex; align-items: center; margin-bottom: 10pt">
@@ -35,8 +35,8 @@
 			<!-- End KOP -->
 		</div>
 		<div class="header text-center mt-1" contenteditable>
-			<h1 class="bold-underlined font14" contenteditable>SURAT KETERANGAN BELUM MENIKAH</h1>
-			<p contenteditable>Nomor: 470.447.VII.08.08.<?= romanMonth() ?>.<?= date('Y') ?>
+			<h1 class="bold-underlined font14" contenteditable>SURAT KETERANGAN PENGHASILAN</h1>
+			<p contenteditable>Nomor: 470.3041.VII.08.08.<?= romanMonth() ?>.<?= date('Y') ?>
 			</p>
 		</div>
 
@@ -46,7 +46,7 @@
 			<table class="mt-1">
 				<tr height="12px">
 					<td width="200px">
-						<p>Nama</p>
+						<p> Nama</p>
 					</td>
 					<td>
 						<p class="uppercase text-bold">: <?= $nama ?></p>
@@ -54,15 +54,7 @@
 				</tr>
 				<tr>
 					<td width="200px">
-						<p>Jenis Kelamin</p>
-					</td>
-					<td>
-						<p>: <?= $jkel ?></p>
-					</td>
-				</tr>
-				<tr>
-					<td width="200px">
-						<p>Tempat, Tanggal Lahir</p>
+						<p> Tempat, Tanggal Lahir</p>
 					</td>
 					<td>
 						<p>: <?= $ttl ?></p>
@@ -70,32 +62,15 @@
 				</tr>
 				<tr>
 					<td width="200px">
-						<p>Warga Negara</p>
+						<p> Jenis Kelamin</p>
 					</td>
 					<td>
-						<p>: <?= $kewarganegaraan ?></p>
+						<p>: <?= $jkel ?></p>
 					</td>
 				</tr>
 				<tr>
 					<td width="200px">
-						<p>Agama</p>
-					</td>
-					<td>
-						<p>: <?= $agama ?></p>
-					</td>
-				</tr>
-				<tr>
-					<td width="200px">
-						<p>Status Perkawinan</p>
-					</td>
-					<td>
-						<p>: <?= $status ?></p>
-					</td>
-				</tr>
-
-				<tr>
-					<td width="200px">
-						<p>Pekerjaan</p>
+						<p> Pekerjaan</p>
 					</td>
 					<td>
 						<p>: <?= $pekerjaan ?></p>
@@ -103,7 +78,7 @@
 				</tr>
 				<tr>
 					<td width="200px">
-						<p>Alamat</p>
+						<p>&#9675; Alamat</p>
 					</td>
 					<td>
 						<p>: <?= $alamat ?></p>
@@ -114,7 +89,7 @@
 
 		<br>
 		<br>
-		<p contenteditable="">Adalah benar warga desa kami yang berdomisili dengan alamat tersebut diatas, berdasarkan dari laporan pamong setempat dan juga pengamatan kami warga kami tersebut benar Belum Pernah Menikah (Jejaka/Perawan).
+		<p contenteditable>Nama tersebut di atas benar penduduk Desa <b>Jatimulyo</b> seperti yang tercantum di atas dan menurut keterangan yang bersangkutan mempunyai penghasilan <b> <?= $penghasilan ?></b> per bulan. dan jumlah tanggungan dalam keluarga <?= $jumlah_tanggungan ?> orang. Surat Keterangan ini diberikan kepada yang bersangkutan untuk dipergunakan sebagai salah satu syarat kelengkapan berkas <b><?= $tujuan_pembuatan ?></b>
 		</p>
 		<p contenteditable class="mt-1">Demikian Surat Keterangan ini kami berikan agar kiranya dapat dipergunakan sebagaimana mestinya.</p>
 		<br>

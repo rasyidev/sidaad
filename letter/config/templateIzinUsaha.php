@@ -5,7 +5,7 @@
 	$date = date('d-m-Y');
 	$query = "INSERT INTO transaksi VALUES 
 			('', 
-			'Surat Keterangan Status Pernikahan', 
+			'Surat Keterangan Usaha', 
 			'$nik', 
 			'$user_id', 
 			'$date'
@@ -49,7 +49,7 @@
 						<p>Nama</p>
 					</td>
 					<td>
-						<p>: <?= $nama ?></p>
+						<p class="uppercase text-bold">: <?= $nama ?></p>
 					</td>
 				</tr>
 				<tr>

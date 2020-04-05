@@ -58,14 +58,25 @@ class BuatSurat extends CI_Controller{
     $this->load->view('templates/footer_template');
   }
 
-  public function skck(){
+  public function pengantarSKCK(){
     global $data;
-    $this->load->view('surat/skck');
+    $nik = $this->uri->segment(3);
+    $data['penduduk'] = $this->M_Operator->getSingleData($nik);
+    $data['title'] = "Buat Surat Keterangan Izin Usaha";
+    $this->load->view('templates/header_template', $data);
+    $this->load->view('surat/pengantar_skck', $data);
+    $this->load->view('templates/footer_template');
   }
 
   public function izinKeramaian(){
     global $data;
-    $this->load->view('surat/izin_keramaian');
+    $nik = $this->uri->segment(3);
+    $data['penduduk'] = $this->M_Operator->getSingleData($nik);
+    $data['title'] = "Buat Surat Izin Keramaian";
+
+    $this->load->view('templates/header_template', $data);
+    $this->load->view('surat/izin_keramaian', $data);
+    $this->load->view('templates/footer_template');
   }
 
   public function sktm(){
@@ -83,12 +94,24 @@ class BuatSurat extends CI_Controller{
 
   public function ketDomisili(){
     global $data;
-    $this->load->view('surat/ket_domisili');
+    $nik = $this->uri->segment(3);
+    $data['penduduk'] = $this->M_Operator->getSingleData($nik);
+    $data['title'] = "Buat Surat Keterangan Domisili";
+
+    $this->load->view('templates/header_template', $data);
+    $this->load->view('surat/ket_domisili', $data);
+    $this->load->view('templates/footer_template');
   }
 
-  public function ketPenghasilan(){
+  public function ketPenghasilanOrtu(){
     global $data;
-    $this->load->view('surat/ket_penghasilan');
+    $nik = $this->uri->segment(3);
+    $data['penduduk'] = $this->M_Operator->getSingleData($nik);
+    $data['title'] = "Buat Surat Keterangan Domisili";
+
+    $this->load->view('templates/header_template', $data);
+    $this->load->view('surat/ket_penghasilan_ortu', $data);
+    $this->load->view('templates/footer_template');
   }
 
   public function formCari()

@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row justify-content-center">
-        <h1 class="text-center">Form Surat Izin Keramaian</h1>
-        <form action="<?= base_url('letter/index_izin_keramaian.php') ?>" method="post" class="col col-10 col-md-8">
+        <h1 class="text-center">Form Pengantar SKCK</h1>
+        <form action="<?= base_url('letter/index_pengantar_skck.php') ?>" method="post" class="col col-10 col-md-8">
             <input type="hidden" name="user_id" value="<?= $_SESSION['user_id'] ?>">
             <input type="hidden" name="nik" value="<?= $penduduk['nik'] ?>">
             <div class="form-group">
@@ -116,7 +116,7 @@
                 <input type="text" class="form-control" name="jumlah_undangan" id="jumlah_undangan" aria-describedby="helpId" placeholder="Jumlah Undangan">
             </div>
 
-            <button type="submit" class="btn btn-primary">Buat Surat Izin Keramaian</button>
+            <button type="submit" class="btn btn-primary">Buat Pengantar SKCK</button>
         </form>
     </div>
 </div>

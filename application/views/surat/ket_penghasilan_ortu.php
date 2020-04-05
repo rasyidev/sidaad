@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row justify-content-center">
-    <h1 class="text-center">Form Surat Keterangan Domisili</h1>
-    <form action="<?= base_url('letter/index_ket_domisili.php') ?>" method="post" class="col col-10 col-md-8">
+    <h1 class="text-center">Form Surat Keterangan Penghasilan Orangtua</h1>
+    <form action="<?= base_url('letter/index_ket_penghasilan_ortu.php') ?>" method="post" class="col col-10 col-md-8">
       <input type="hidden" name="user_id" value="<?= $_SESSION['user_id'] ?>">
       <input type="hidden" name="nik" value="<?= $penduduk['nik'] ?>">
       <div class="form-group">
@@ -73,10 +73,18 @@
                                                                                                                                 } ?>">
       </div>
       <div class="form-group">
-        <input type="text" class="form-control" name="tahun_tinggal" id="tahun_tinggal" aria-describedby="helpId" placeholder="Tahun Tinggal">
+        <input type="text" class="form-control" name="penghasilan" id="penghasilan" aria-describedby="helpId" placeholder="Penghasilan Perbulan">
       </div>
-      
-      <button type="submit" class="btn btn-primary">Buat Surat Keterangan Domisili</button>
+
+      <div class="form-group">
+        <input type="text" class="form-control" name="tujuan_pembuatan" id="tujuan_pembuatan" aria-describedby="helpId" placeholder="Tujuan Pembuatan">
+      </div>
+
+      <div class="form-group">
+        <input type="text" class="form-control" name="jumlah_tanggungan" id="jumlah_tanggungan" aria-describedby="helpId" placeholder="Jumlah Tanggungan">
+      </div>
+
+      <button type="submit" class="btn btn-primary">Buat Surat Keterangan Penghasilan Orangtua</button>
     </form>
   </div>
 </div>
