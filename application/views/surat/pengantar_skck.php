@@ -1,6 +1,6 @@
 <div class="container">
-    <div class="row justify-content-center">
         <h1 class="text-center">Form Pengantar SKCK</h1>
+    <div class="row justify-content-center">
         <form action="<?= base_url('letter/index_pengantar_skck.php') ?>" method="post" class="col col-10 col-md-8">
             <input type="hidden" name="user_id" value="<?= $_SESSION['user_id'] ?>">
             <input type="hidden" name="nik" value="<?= $penduduk['nik'] ?>">
@@ -73,47 +73,7 @@
                                                                                                                                         } ?>">
             </div>
             <div class="form-group">
-                <input type="text" class="form-control" name="umur" id="umur" aria-describedby="helpId" placeholder="Umur">
-            </div>
-            <hr>
-            <div class="form-group">
-                <input type="text" class="form-control" name="nama_acara" id="tujuan_pembuatan" aria-describedby="helpId" placeholder="Nama Acara">
-            </div>
-
-            <div class="form-group">
-                <input type="text" class="form-control" name="hari_acara" id="hari_acara" aria-describedby="helpId" placeholder="Hari">
-            </div>
-
-            <div class="form-group">
-                <input type="text" class="form-control" name="tanggal_acara" id="tanggal_acara" aria-describedby="helpId" placeholder="Tanggal">
-            </div>
-
-            <div class="form-group">
-                <input type="text" class="form-control" name="waktu_acara" id="waktu_acara" aria-describedby="helpId" placeholder="Waktu">
-            </div>
-
-            <div class="form-group">
-                <input type="text" class="form-control" name="tempat_acara" id="tempat_acara" aria-describedby="helpId" placeholder="Tempat">
-            </div>
-
-            <div class="form-group">
-                <input type="text" class="form-control" name="hiburan" id="hiburan" aria-describedby="helpId" placeholder="Hiburan">
-            </div>
-
-            <div class="form-group">
-                <input type="text" class="form-control" name="nama_hiburan" id="nama_hiburan" aria-describedby="helpId" placeholder="Hiburan">
-            </div>
-
-            <div class="form-group">
-                <input type="text" class="form-control" name="pimpinan" id="pimpinan" aria-describedby="helpId" placeholder="Pimpinan">
-            </div>
-
-            <div class="form-group">
-                <input type="text" class="form-control" name="no_telp" id="no_telp" aria-describedby="helpId" placeholder="Nomor Telepon">
-            </div>
-
-            <div class="form-group">
-                <input type="text" class="form-control" name="jumlah_undangan" id="jumlah_undangan" aria-describedby="helpId" placeholder="Jumlah Undangan">
+                <input type="text" class="form-control" name="keperluan" id="keperluan" aria-describedby="helpId" placeholder="Keperluan">
             </div>
 
             <button type="submit" class="btn btn-primary">Buat Pengantar SKCK</button>

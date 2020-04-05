@@ -40,7 +40,7 @@
 							<p>Nomor</p>
 						</td>
 						<td>
-							<p>: 300/0462/ VII.08.08 /<?= romanMonth() ?>/ <?= date('Y') ?></p>
+							<p>: 300/634/ VII.08.08 /<?= romanMonth() ?>/ <?= date('Y') ?></p>
 						</td>
 					</tr>
 					<tr height="12px">
@@ -56,7 +56,7 @@
 							<p>Perihal</p>
 						</td>
 						<td>
-							<p>: Pemberitahuan Kapolsek</p>
+							<p>: Mohon Diterbitkan SKCK</p>
 						</td>
 					</tr>
 				</table>
@@ -75,31 +75,39 @@
 				<table class="mt-1">
 					<tr height="12px">
 						<td width="200px">
-							<p>1. Nama lengkap dan alias</p>
+							<p>Nama</p>
 						</td>
 						<td>
 							<p class="uppercase text-bold">: <?= $nama ?></p>
 						</td>
 					</tr>
-					<tr height="12px">
+					<tr>
 						<td width="200px">
-							<p>2. Umur</p>
+							<p>NIK</p>
 						</td>
 						<td>
-							<p>: <?= $umur ?></p>
+							<p>: <?= $nik ?></p>
 						</td>
 					</tr>
 					<tr>
 						<td width="200px">
-							<p>3. Kewarganegaraan</p>
+							<p>Tempat, Tanggal Lahir</p>
 						</td>
 						<td>
-							<p>: <?= $kewarganegaraan ?></p>
+							<p>: <?= $ttl ?></p>
 						</td>
 					</tr>
 					<tr>
 						<td width="200px">
-							<p>4. Agama</p>
+							<p>Jenis Kelamin</p>
+						</td>
+						<td>
+							<p>: <?= $jkel ?></p>
+						</td>
+					</tr>
+					<tr>
+						<td width="200px">
+							<p>Agama</p>
 						</td>
 						<td>
 							<p>: <?= $agama ?></p>
@@ -107,7 +115,23 @@
 					</tr>
 					<tr>
 						<td width="200px">
-							<p>5. Pekerjaan</p>
+							<p>Status Perkawinan</p>
+						</td>
+						<td>
+							<p>: <?= $status ?></p>
+						</td>
+					</tr>
+					<tr>
+						<td width="200px">
+							<p>Warga Negara</p>
+						</td>
+						<td>
+							<p>: <?= $kewarganegaraan ?></p>
+						</td>
+					</tr>
+					<tr>
+						<td width="200px">
+							<p>Pekerjaan</p>
 						</td>
 						<td>
 							<p>: <?= $pekerjaan ?></p>
@@ -115,7 +139,7 @@
 					</tr>
 					<tr>
 						<td width="200px">
-							<p>6. Alamat</p>
+							<p>Alamat</p>
 						</td>
 						<td>
 							<p>: <?= $alamat ?></p>
@@ -124,86 +148,13 @@
 				</table>
 			</div>
 			<br>
-			<p contenteditable>Bermaksud menyelenggarakan <b><?= $nama_acara ?></b> Pada :
+			<p contenteditable><b>Keperluan :</b></p>
+			<p contenteditable>Mohon diterbitkan Surat Keterangan Catatan Kepolisian ( SKCK ) dari Polres Lampung Selatan untuk keperluan : <b><?= $keperluan ?>.</b></p>
+			<p contenteditable>Sebagai bahan pertimbangan bapak kami sampaikan bahwa selama berdomisili di desa Jatimulyo Kec. Jati Agung Kab. Lampung Selatan yang bersangkutan beradat istiadat dan berkelakuan baik, tidak pernah melakukan tindakan yang melanggar hukum yang berlaku serta bebas dari narkoba.
+				Demikian surat permohonan ini dibuat dengan sebenarnya agar dapat dipergunakan sebagaimana mestinya.
 			</p>
-
-			<table class="mt-1 ml-4">
-				<tr height="12px">
-					<td width="200px">
-						<p contenteditable>Hari</p>
-					</td>
-					<td>
-						<p contenteditable>: <?= $hari_acara ?></p>
-					</td>
-				</tr>
-				<tr height="12px">
-					<td width="200px">
-						<p contenteditable>Tanggal</p>
-					</td>
-					<td>
-						<p contenteditable>: <?= $tanggal_acara ?></p>
-					</td>
-				</tr>
-				<tr>
-					<td width="200px">
-					<p contenteditable>Waktu</p>
-					</td>
-					<td>
-						<p contenteditable>: <?= $waktu_acara ?></p>
-					</td>
-				</tr>
-				<tr>
-					<td width="200px">
-						<p contenteditable>Tempat</p>
-					</td>
-					<td>
-						<p contenteditable>: <?= $tempat_acara ?></p>
-					</td>
-				</tr>
-				<tr>
-					<td width="200px">
-						<p contenteditable>Hiburan</p>
-					</td>
-					<td>
-						<p contenteditable>: <?= $hiburan ?></p>
-					</td>
-				</tr>
-				<tr>
-					<td width="200px">
-						<p contenteditable>Nama Hiburan</p>
-					</td>
-					<td>
-						<p contenteditable>: <?= $nama_hiburan ?></p>
-					</td>
-				<tr>
-					<td width="200px">
-						<p contenteditable>Pimpinan</p>
-					</td>
-					<td>
-						<p contenteditable>: <?= $pimpinan ?></p>
-					</td>
-				</tr>
-				<tr>
-					<td width="200px">
-						<p contenteditable>No. HP</p>
-					</td>
-					<td>
-						<p contenteditable>: <?= $no_telp ?></p>
-					</td>
-				</tr>
-				<tr>
-					<td width="200px">
-						<p contenteditable>Undangan</p>
-					</td>
-					<td>
-						<p contenteditable>: <?= $jumlah_undangan ?> Orang</p>
-					</td>
-				</tr>
-			</table>
-
-			<p contenteditable class="mt-1">Demikian Surat Rekomendasi ini kami buat dengan sebenarnya, kiranya dapat dipergunakan sebagaimana mestinya.</p>
 			<br>
-			<div class="d-flex justify-between">
+			<div class="d-flex justify-content-end">
 				<div class="ttd text-center" contenteditable>
 					<p contenteditable>Jatimulyo, <?= date('d') . ' ' . bulan() . ' ' . date('Y') ?></p>
 					<p contenteditable>Kepala Desa Jatimulyo</p>
@@ -213,16 +164,6 @@
 					<br>
 					<br>
 					<P contenteditable class="bold-underlined">SUMARDI, SE.</P>
-				</div>
-				<div class="pemohon text-center">
-					<p contenteditable>PEMOHON</p>
-					<br>
-					<br>
-					<br>
-					<br>
-					<br>
-					<br>
-					<p contenteditable class="uppercase bold-underlined mt-05"><?=$nama ?></p>
 				</div>
 			</div>
 			<header>

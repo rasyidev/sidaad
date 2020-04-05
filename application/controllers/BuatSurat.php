@@ -62,7 +62,7 @@ class BuatSurat extends CI_Controller{
     global $data;
     $nik = $this->uri->segment(3);
     $data['penduduk'] = $this->M_Operator->getSingleData($nik);
-    $data['title'] = "Buat Surat Keterangan Izin Usaha";
+    $data['title'] = "Buat Surat Pengantar SKCK";
     $this->load->view('templates/header_template', $data);
     $this->load->view('surat/pengantar_skck', $data);
     $this->load->view('templates/footer_template');
