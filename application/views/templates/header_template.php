@@ -1,3 +1,5 @@
+<?php //var_dump($nama) 
+?>
 <!DOCTYPE html>
 <html>
 
@@ -41,7 +43,7 @@
           <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-          <a href="<?=base_url('dashboard') ?>" class="nav-link">Home</a>
+          <a href="<?= base_url('dashboard') ?>" class="nav-link">Home</a>
         </li>
 
       </ul>
@@ -55,7 +57,7 @@
     <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
       <!-- Brand Logo -->
-      <a href="<?=base_url('dashboard') ?>" class="brand-link d-flex align-items-center px-1 pr-2 justify-content-around">
+      <a href="<?= base_url('dashboard') ?>" class="brand-link d-flex align-items-center px-1 pr-2 justify-content-around">
         <img src="<?= base_url('assets/vendor/') ?>img/logo-lampsel-1.png" alt="" style="height: 50px">
         <span class="brand-text font-font-weight-bolder">SIDAAD Jatimulyo</span>
       </a>
@@ -66,7 +68,7 @@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
           <div class="info">
-            <a href="#" class="d-block"> <?= $username ?> <span class="badge badge-primary">operator</span></a>
+            <a href="#" class="d-block"> <?= $username ?> <span class="badge badge-primary"><?= $role ?></span></a>
           </div>
         </div>
 
@@ -88,29 +90,45 @@
               <ul class="nav nav-treeview">
                 <?php foreach ($nama_surat_lengkap as $surat) : ?>
                   <?php $inisial_surat = '';
-                  if($surat == "Ket. Belum Menikah"){
+                  if ($surat == "Ket. Belum Menikah") {
                     $inisial_surat = "ketStatus";
-                  }elseif($surat=="Ket. Tidak Mampu"){
+                  } elseif ($surat == "Ket. Tidak Mampu") {
                     $inisial_surat = "sktm";
-                  }elseif($surat== "Izin Usaha"){
+                  } elseif ($surat == "Izin Usaha") {
                     $inisial_surat = "izinUsaha";
-                  }elseif ($surat == "Izin Keramaian"){
+                  } elseif ($surat == "Izin Keramaian") {
                     $inisial_surat = "izinKeramaian";
-                  }elseif($surat == "Ket. Domisili"){
+                  } elseif ($surat == "Ket. Domisili") {
                     $inisial_surat = "ketDomisili";
-                  }elseif($surat == "Ket. Penghasilan Ortu"){
+                  } elseif ($surat == "Ket. Penghasilan Ortu") {
                     $inisial_surat = "ketPenghasilanOrtu";
-                  }elseif($surat == "Pengantar SKCK"){
+                  } elseif ($surat == "Pengantar SKCK") {
                     $inisial_surat = "pengantarSKCK";
-                  }else{
+                  } else {
                     // redirect('dashboard');
                   } ?>
-                  <li class="nav-item">
-                    <a href="<?=base_url('BuatSurat/formCari/') . $inisial_surat ?>" class="nav-link">
-                      <p><?= $surat ?></p>
-                    </a>
-                  </li>
-                <?php endforeach; ?>               
+                  <?php if ($this->uri->segment(1) == "BuatSurat") : ?>
+                    <?php if ($this->uri->segment(3) == $inisial_surat) : ?>
+                      <li class="nav-item">
+                        <a href="#" class="nav-link active">
+                          <p><?= $surat ?></p>
+                        </a>
+                      </li>
+                    <?php else : ?>
+                      <li class="nav-item">
+                        <a href="<?= base_url('BuatSurat/formCari/') . $inisial_surat ?>" class="nav-link">
+                          <p><?= $surat ?></p>
+                        </a>
+                      </li>
+                    <?php endif; ?>
+                  <?php else : ?>
+                    <li class="nav-item">
+                      <a href="<?= base_url('BuatSurat/formCari/') . $inisial_surat ?>" class="nav-link">
+                        <p><?= $surat ?></p>
+                      </a>
+                    </li>
+                  <?php endif ?>
+                <?php endforeach; ?>
               </ul>
             </li>
             <li class="nav-item has-treeview">

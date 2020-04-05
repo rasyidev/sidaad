@@ -18,6 +18,7 @@ class DataPenduduk extends CI_Controller {
     $data['status'] = ["Menikah", "Belum Menikah"];
     $data['jkel'] = ["Laki - laki", "Perempuan"];
     $data['kewarganegaraan'] = ["Indonesia", "Warga Negara Asing"];
+    $data['role'] = ($session_data['login'] == "1") ? "Administrator" : "Operator";
     return $data;
   }
 

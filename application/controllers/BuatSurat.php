@@ -18,6 +18,7 @@ class BuatSurat extends CI_Controller{
     $data['daftar_jkel'] = ["Laki - laki", "Perempuan"];
     $data['daftar_status'] = ["Menikah", "Belum Menikah"];
     $data['kewarganegaraan'] = ["Indonesia", "Warga Negara Asing"];
+    $data['role'] = ($session_data['login'] == "1") ? "Administrator" : "Operator";
     return $data;
   }
 
@@ -89,7 +90,8 @@ class BuatSurat extends CI_Controller{
   {
     global $data;
     $data['jenis_surat'] = $this->uri->segment(3);
-    // var_dump($data); die;
+    // var_dump($data); 
+    // var_dump($this->session->get_userdata()); die;
 
     // if btn clicked and not empty
     if(isset($_POST['btn_cari']) && $_POST['key']!=''){

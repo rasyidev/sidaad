@@ -14,6 +14,7 @@ class Dashboard extends CI_Controller{
     $session_data = $this->session->get_userdata();
     $data['nama_surat_lengkap'] = ["Ket. Belum Menikah", "Ket. Tidak Mampu", "Izin Usaha", "Izin Keramaian", "Ket. Domisili", "Ket. Penghasilan Ortu", "Pengantar SKCK"];
     $data['username'] = $session_data['username'];
+    $data['role'] = ($session_data['login']=="1") ? "Administrator" : "Operator";
     return $data;
   }
 
@@ -36,13 +37,18 @@ class Dashboard extends CI_Controller{
     global $data;
     // Unset password to be viewed for reduce vulnarablity
     $data['users'] = $this->M_Admin->getAllUser();
+    $data['title'] = "Dashboard Admin";
     // var_dump($data); die;
     // open dashboard admin and send data to it
+    $this->load->view('templates/header_template', $data);
     $this->load->view('v_dashboard_admin', $data);
+    $this->load->view('templates/footer_template');
   }
 
   public function operator(){
     global $data;
+    // var_dump($this->session->get_userdata());
+    // var_dump($data); die;
     $data['title'] = "Dashboard Operator";
     $this->load->view('templates/header_template', $data);
     $this->load->view('v_dashboard');
@@ -51,15 +57,51 @@ class Dashboard extends CI_Controller{
 
   public function tambahDataUser(){
     global $data;
+    $data['title'] = "Tambah Data User";
     $this->form_validation->set_rules('username', "Username", 'required');
     $this->form_validation->set_rules('password', "Password", 'required');
     $this->form_validation->set_rules('repassword', "Ulang Password", 'required|matches[password]');
     if($this->form_validation->run()==FALSE){
+      $this->load->view('templates/header_template', $data);
       $this->load->view('form/tambah_data_user');
+      $this->load->view('templates/footer_template');
     }else{
       $this->M_Admin->tambahUser();
       // echo "stop";die;
       $this->session->set_flashdata('flash', 'Berhasil');
+      redirect('dashboard/tampilUser');
+    }
+  }
+
+  public function detailUser()
+  {
+    global $data;
+    $data['title'] = "Detail User";
+    $user_id = $this->uri->segment(3);
+    $data['user'] = $this->M_Admin->getSingleUser();
+    $this->load->view('templates/header_template', $data);
+    $this->load->view('detail_user', $data);
+    $this->load->view('templates/footer_template', $data);
+  }
+
+  public function ubahUser()
+  {
+    global $data;
+    $data['daftar_role'] = ["1", "2"];
+    $data['title'] = "Ubah Data User";
+    $data['user'] = $this->M_Admin->getSingleUser();
+    // var_dump($data);die;
+    // if($this->uri->segment(3)){
+    $this->form_validation->set_rules('username', 'Username', 'required');
+    $this->form_validation->set_rules('password', 'Password', 'required');
+    $this->form_validation->set_rules('repassword', "Ulang Password", 'required|matches[password]');
+    if ($this->form_validation->run() == FALSE) {
+      $this->load->view('templates/header_template', $data);
+      $this->load->view('ubah_data_user.php', $data);
+      $this->load->view('templates/footer_template');
+    } else {
+      $this->M_Admin->ubahUser();
+      $this->session->set_flashdata('flash_ubah', 'Diubah');
       redirect('dashboard/tampilUser');
     }
   }

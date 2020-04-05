@@ -11,6 +11,16 @@ class M_Admin extends CI_Model{
     return $users->result_array();
   }
 
+  public function getSingleUser(){
+    $user_id = $this->uri->segment(3);
+    $this->db->select('username, password, role_name');
+    $this->db->from('users');
+    $this->db->join('user_role', 'users.role_id=user_role.role_id');
+    $this->db->where('user_id', $user_id);
+    $data_user = $this->db->get()->row_array();
+    return $data_user;
+  }
+
   public function tambahUser(){
     $username = $this->input->post('username');
     $password = $this->input->post('password');
@@ -18,6 +28,17 @@ class M_Admin extends CI_Model{
     $data = ['user_id' => '', 'username' => $username, 'password' => $password, 'role_id' => $user_role];
     // var_dump($data);die;
     $this->db->insert('users', $data);
+  }
+
+  public function ubahUser(){
+    $user_id = $this->input->post('user_id');
+    $username = $this->input->post('username');
+    $password = $this->input->post('password');
+    $user_role = $this->input->post('user_role');
+    $data = ['user_id' => '', 'username' => $username, 'password' => $password, 'role_id' => $user_role];
+    // var_dump($data);die;
+    $this->db->where('user_id', $user_id);
+    $this->db->update('users', $data);
   }
 
   public function hapusUser(){
