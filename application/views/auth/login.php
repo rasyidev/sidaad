@@ -15,47 +15,56 @@
   <link rel="stylesheet" href="<?=base_url('assets/vendor/adminlte') ?>plugins/icheck-bootstrap/icheck-bootstrap.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="<?=base_url('assets/vendor/') ?>css/adminlte.min.css">
+  <link rel="stylesheet" href="<?=base_url('assets/vendor/') ?>css/adminlte.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
 <body class="hold-transition login-page">
 <div class="login-box">
-  <div class="login-logo">
-    <img src="<?=base_url('assets/vendor/img/logo-lampsel-1.png') ?>" alt="" height="200px">
-    <br>
-    <br>
-    <a href="">SIDAAD JATIMULYO</a>
-  </div>
-  <!-- /.login-logo -->
-  <div class="card">
-    <div class="card-body login-card-body">
-
-      <form action="<?= base_url('auth') ?>" method="post">
-        <div class="input-group mb-3">
-          <input type="text" class="form-control" placeholder="Username" name="username">
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-envelope"></span>
-            </div>
-          </div>
-        </div>
-        <div class="input-group mb-3">
-          <input type="password" class="form-control" placeholder="Password" name="password">
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-lock"></span>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-4">
-            <button type="submit" class="btn btn-primary btn-block" name="masuk">Masuk</button>
-          </div>
-          <!-- /.col -->
-        </div>
-      </form>
+  <div class="pic-box-hold">
+    <h2>SISTEM INFORMASI DAN APLIKASI ADMINISTRASI</h2><br>
+    <h5>DESA JATIMULYO</h5>
+    <div class="anon-dev-logo">
+      <img src="<?=base_url('assets/vendor/img/anon-dev-white.png') ?>" alt="" height="50px">
     </div>
-    <!-- /.login-card-body -->
+  </div>
+  <div class="login-box-hold">
+    <div class="login-logo">
+      <img src="<?=base_url('assets/vendor/img/logo-lampsel-1.png') ?>" alt="" height="200px">
+      <br>
+      <br>
+    </div>
+    <!-- /.login-logo -->
+    
+      <div class="card-body login-card-body">
+        
+        <form action="<?= base_url('auth') ?>" method="post">
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Username" name="username">
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-envelope"></span>
+              </div>
+            </div>
+          </div>
+          <div class="input-group mb-3">
+            <input type="password" class="form-control" placeholder="Password" name="password">
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-lock"></span>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-4">
+              <button type="submit" class="btn btn-primary btn-block" name="masuk">Masuk</button>
+            </div>
+            <!-- /.col -->
+          </div>
+        </form>
+      </div>
+      <!-- /.login-card-body -->
+    
   </div>
 </div>
 <!-- /.login-box -->
