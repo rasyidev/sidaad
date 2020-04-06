@@ -1,6 +1,6 @@
 <div class="container m-auto">
+    <h1 class="text-center">Form Ubah Data User</h1>
   <div class="row justify-content-center">
-    <h1>Form Ubah Data User</h1>
 
     <!-- Alert validasi data -->
     <?php if (validation_errors()) : ?>
@@ -27,17 +27,20 @@
       <div class="form-group">
         <select class="form-control" name="user_role" id="user_role">
           <option value="" disabled selected>Jenis User</option>
-          <?php foreach ($daftar_role as $role) : ?>
-            <?php ($role == "1") ? $role_name = "Administrator" : $role_name = "Operator" ?>
-            <?php if ($role == $user['role_id']) : ?>
-              <option value="<?= $user['role_id'] ?>" selected><?= $role_name ?></option>
+          <?php $i = 0; foreach ($daftar_role as $role) : ?>
+            <?php $i++; ($role == "1") ? $role_name = "Administrator" : $role_name = "Operator" ?>
+            <?php if ($role_name == $user['role_name']) : ?>
+              <option value="<?= $i ?>" selected><?= $role_name ?></option>
             <?php else : ?>
-              <option value="<?= $user['role_id'] ?>"><?= $role_name ?></option>
+              <option value="<?= $i ?>"><?= $role_name ?></option>
             <?php endif; ?>
           <?php endforeach; ?>
         </select>
       </div>
-      <button type="submit" class="btn btn-primary mb-5" name="btn_tambah">Ubah Data User</button>
+      <div class="d-flex justify-content-end">
+        <a name="" id="" class="btn btn-outline-warning" href="<?=base_url('Dashboard/tampilUser') ?>" role="button">Batal</a>
+        <button type="submit" class="btn btn-primary ml-2" name="btn_tambah">Ubah Data User</button>
+      </div>
     </form>
   </div>
 </div>

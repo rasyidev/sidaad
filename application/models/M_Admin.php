@@ -13,7 +13,7 @@ class M_Admin extends CI_Model{
 
   public function getSingleUser(){
     $user_id = $this->uri->segment(3);
-    $this->db->select('username, password, role_name');
+    $this->db->select('username, password, role_name, user_id');
     $this->db->from('users');
     $this->db->join('user_role', 'users.role_id=user_role.role_id');
     $this->db->where('user_id', $user_id);
@@ -35,8 +35,8 @@ class M_Admin extends CI_Model{
     $username = $this->input->post('username');
     $password = $this->input->post('password');
     $user_role = $this->input->post('user_role');
-    $data = ['user_id' => '', 'username' => $username, 'password' => $password, 'role_id' => $user_role];
-    // var_dump($data);die;
+    $data = ['user_id' => $user_id, 'username' => $username, 'password' => $password, 'role_id' => $user_role];
+    // var_dump($data); var_dump($user_id);die;
     $this->db->where('user_id', $user_id);
     $this->db->update('users', $data);
   }
