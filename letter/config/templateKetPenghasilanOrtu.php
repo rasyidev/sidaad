@@ -5,7 +5,7 @@
 	$date = date('d-m-Y');
 	$query = "INSERT INTO transaksi VALUES 
 			('', 
-			'Surat Keterangan Penhasilan Orangtua', 
+			'Surat Keterangan Penghasilan Orangtua', 
 			'$nik', 
 			'$user_id', 
 			'$date'

@@ -1,7 +1,7 @@
 <?php 
-
+// var_dump($_POST); die;
 return [
-  'title'      => 'Letter',
+  'title'      =>  date('d_m_y') . "_namasurat_" .$_POST['nama'],
   'dateFormat' => '%d. %B %Y',
   'locale'     => 'en_EN',
   'name'       => 'John Doe',

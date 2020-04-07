@@ -64,6 +64,7 @@ class DataPenduduk extends CI_Controller {
 
   public function ubah(){
     global $data;
+    $data['title'] = "Ubah Data Penduduk";
     // if($this->uri->segment(3)){
       $this->form_validation->set_rules('nik', 'NIK', 'required');
       $this->form_validation->set_rules('nama', 'Nama', 'required');

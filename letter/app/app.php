@@ -1,6 +1,6 @@
 <?php 
 
-date_default_timezone_set('UTC');
+date_default_timezone_set('Asia/Jakarta');
 
 function dataUri($file) {
   return file_exists($file) ? 'data:image/jpg;base64,' . base64_encode(file_get_contents($file)) : null;
