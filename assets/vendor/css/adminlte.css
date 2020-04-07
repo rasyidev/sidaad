@@ -19971,26 +19971,98 @@ html.maximized-card {
   justify-content: center;
 }
 
-.login-box,
-.register-box {
-  width: 360px;
-}
 
-@media (max-width: 576px) {
-  .login-box,
-  .register-box {
-    margin-top: 20px;
-    width: 90%;
-  }
+
+/* ======================= FLEX LOGIN ====================== */
+
+.login-page{
+  /* background-image: url('../img/background1.png');
+  background-size: 150px;
+  background-repeat: repeat; */
+  background-color: whitesmoke
 }
 
 .login-card-body,
 .register-card-body {
-  background: #ffffff;
+  background: transparent;
   border-top: 0;
   color: #666;
-  padding: 20px;
+  padding: 20px 50px 20px 50px;
 }
+.login-box,
+.register-box {
+  display: flex;
+  background-color: #cfcfcf;
+  width: 992px;
+  height: 768px;
+  flex-direction: row;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.438);
+}
+.login-box-hold{
+  width: 50%;
+  height: 100%;
+  background-color: white;
+  padding: 150px 20px 100px 20px;
+}
+.pic-box-hold{
+  color: whitesmoke;
+  font-family:'Century Gothic';
+  width: 50%;
+  height: 100%;
+  background-color: rgb(25, 136, 170);
+  padding: 70px 40px 100px 40px;
+}
+.anon-dev-logo{
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: 90%;
+}
+
+@media (max-width: 992px) {
+  .login-box,
+  .register-box {
+    width: 70%;
+    flex-direction: column;
+  }
+  .login-box-hold{
+    width: 100%;
+    height: 75%;
+    padding: 50px 20px 100px 20px;
+  }
+  .pic-box-hold{
+    width: 100%;
+    height: 25%;
+    padding: 30px 30px 30px 30px;
+  }
+  .anon-dev-logo{
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .login-box,
+  .register-box {
+    width: 60%;
+  }
+  .login-box-hold{
+    width: 100%;
+    padding: 50px 20px 100px 20px;
+  }
+}
+
+@media (max-width: 700px) {
+  .login-box,
+  .register-box {
+    width: 90%;
+  }
+  .login-box-hold{
+    width: 100%;
+    padding: 50px 20px 100px 20px;
+  }
+}
+
+/* ========================================================= */
 
 .login-card-body .input-group .form-control,
 .register-card-body .input-group .form-control {
