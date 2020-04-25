@@ -45,7 +45,6 @@
         <li class="nav-item d-none d-sm-inline-block">
           <a href="<?= base_url('dashboard') ?>" class="nav-link">Home</a>
         </li>
-
       </ul>
       <li class="nav-item" style="list-style: none">
         <a href="<?= base_url('auth/logout') ?>" class="btn btn-danger">logout</a>
@@ -56,15 +55,20 @@
 
     <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
-      <!-- Brand Logo -->
-      <a href="<?= base_url('dashboard') ?>" class="brand-link d-flex align-items-center px-1 pr-2 justify-content-around">
-        <img src="<?= base_url('assets/vendor/') ?>img/logo-lampsel-1.png" alt="" style="height: 50px">
-        <span class="brand-text font-font-weight-bolder">SIDAAD Jatimulyo</span>
-      </a>
-
-
+      
+      
+      
       <!-- Sidebar -->
       <div class="sidebar">
+        <!-- Brand Logo -->
+        <div class="user-panel mt-3 mb-3 pb-2 d-flex">
+          <div class="pull-left image">
+            <img src="<?= base_url('assets/vendor/') ?>img/logo-lampsel-1.png" alt="" style="height: 50px">
+          </div>
+          <div class="info">
+            <a href="<?= base_url('dashboard') ?>" class="pull-left info"><h5>SIDAAD Jatimulyo</h5></a>
+          </div>
+        </div>
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
           <div class="info">
@@ -78,7 +82,7 @@
             <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
 
-            <li class="nav-item has-treeview menu-open">
+            <li class="nav-item has-treeview menu">
               <a href="#" class="nav-link active">
                 <i class="nav-icon fas fa-copy"></i>
                 <p>
@@ -90,20 +94,28 @@
               <ul class="nav nav-treeview">
                 <?php foreach ($nama_surat_lengkap as $surat) : ?>
                   <?php $inisial_surat = '';
+                  $icon='';
                   if ($surat == "Ket. Belum Menikah") {
                     $inisial_surat = "ketStatus";
+                    $icon = "fa-heart";
                   } elseif ($surat == "Ket. Tidak Mampu") {
                     $inisial_surat = "sktm";
+                    $icon = "fa-balance-scale";
                   } elseif ($surat == "Izin Usaha") {
                     $inisial_surat = "izinUsaha";
+                    $icon = "fa-briefcase";
                   } elseif ($surat == "Izin Keramaian") {
                     $inisial_surat = "izinKeramaian";
+                    $icon = "fa-calendar";
                   } elseif ($surat == "Ket. Domisili") {
                     $inisial_surat = "ketDomisili";
+                    $icon = "fa-map-marker";
                   } elseif ($surat == "Ket. Penghasilan Ortu") {
                     $inisial_surat = "ketPenghasilanOrtu";
+                    $icon = "fa-credit-card";
                   } elseif ($surat == "Pengantar SKCK") {
                     $inisial_surat = "pengantarSKCK";
+                    $icon = "fa-archive";
                   } else {
                     // redirect('dashboard');
                   } ?>
@@ -113,6 +125,7 @@
                         <a href="#" class="nav-link active">
                           <p><?= $surat ?></p>
                         </a>
+                        
                       </li>
                     <?php else : ?>
                       <li class="nav-item">
@@ -124,6 +137,7 @@
                   <?php else : ?>
                     <li class="nav-item">
                       <a href="<?= base_url('BuatSurat/formCari/') . $inisial_surat ?>" class="nav-link">
+                        <i class="nav-icon fas <?= $icon ?>"></i>
                         <p><?= $surat ?></p>
                       </a>
                     </li>
@@ -131,34 +145,13 @@
                 <?php endforeach; ?>
               </ul>
             </li>
-            <li class="nav-item has-treeview">
+            <li class="nav-item">
               <a href="#" class="nav-link">
                 <i class="nav-icon fas fa-book"></i>
                 <p>
                   Log Surat
-                  <i class="right fas fa-angle-left"></i>
                 </p>
               </a>
-              <ul class="nav nav-treeview">
-                <li class="nav-item">
-                  <a href="<?= base_url('dashboard') ?>" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Semua Surat</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="./index.html" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Perbulan</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="./index2.html" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Operator</p>
-                  </a>
-                </li>
-              </ul>
             </li>
           </ul>
         </nav>
