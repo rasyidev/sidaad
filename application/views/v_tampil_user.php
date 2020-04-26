@@ -27,7 +27,11 @@
 							<tr>
 								<td><?= $p['username'] ?></td>
 								<td><?= $p['role_name'] ?></td>
-								<td><a href="<?=base_url('Dashboard/detailUser/') . $p['user_id'] ?>" class="badge badge-success">detail</a> <a href="<?= base_url('Dashboard/ubahUser/') . $p['user_id'] ?>" class="badge badge-warning">Ubah</a> <a href="<?= base_url('Dashboard/hapusUser/') . $p['user_id'] ?>" class="badge badge-danger">Hapus</a></td>
+								<td>
+									<a href="<?=base_url('Dashboard/detailUser/') . $p['user_id'] ?>" class="badge badge-success">detail</a> 
+									<a href="<?= base_url('Dashboard/ubahUser/') . $p['user_id'] ?>" class="badge badge-warning">Ubah</a> 
+									<a href="<?= base_url('Dashboard/hapusUser/') . $p['user_id'] ?>" title="delete" class="badge badge-danger" onclick="return confirm('Anda akan menghapus <?= $p['role_name'] ?> dengan username <?= $p['username'] ?>, Apakah Anda yakin?')">Hapus</a>
+								</td>
 							</tr>
 						<?php endforeach; ?>
 					</tbody>

@@ -31,7 +31,7 @@
           <option value="2">Operator</option>
         </select>
       </div>
-      <button type="submit" class="btn btn-primary mb-5" name="btn_tambah">Tambah Data Penduduk</button>
+      <button type="submit" class="btn btn-primary mb-5" name="btn_tambah">Tambah Data User</button>
     </form>
   </div>
 </div>

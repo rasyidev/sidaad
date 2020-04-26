@@ -65,7 +65,12 @@
               <tr>
                 <td class="py-1"><?= $p['nik'] ?></td>
                 <td class="py-1"><?= $p['nama'] ?></td>
-                <td class="py-1"><a href="<?= base_url('DataPenduduk/detail/') . $p['nik'] ?>" class="badge badge-success">detail</a> <a href="<?= base_url('DataPenduduk/ubah/') . $p['nik'] ?>" class="badge badge-warning">Ubah</a> <a href="<?= base_url('DataPenduduk/hapus/') . $p['nik'] ?>" class="badge badge-danger">Hapus</a></td>
+                <td class="py-1">
+                  <a href="<?= base_url('DataPenduduk/detail/') . $p['nik'] ?>" class="badge badge-success">detail</a> 
+                  <a href="<?= base_url('DataPenduduk/ubah/') . $p['nik'] ?>" class="badge badge-warning">Ubah</a> 
+                  <a href="<?= base_url('DataPenduduk/hapus/') . $p['nik'] ?>" title="delete" class="badge badge-danger" onclick="return confirm('Anda akan menghapus penduduk dengan nama <?= $p['nama'] ?>, Apakah Anda yakin?')">Hapus</a>
+								
+                </td>
               </tr>
             <?php endforeach; ?>
           </tbody>
