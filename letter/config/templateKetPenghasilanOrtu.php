@@ -2,12 +2,15 @@
 	$data = $_POST;
 	$conn = mysqli_connect('localhost', 'root', '', 'sidaad');
 	extract($data);
+	$prev_nomor_surat = mysqli_query($conn, "SELECT nomor_surat FROM `transaksi` order by id_trx desc limit 1");
+	$nomor_surat = (int) $prev_nomor_surat->fetch_row()[0] + 1;
 	$date = date('d-m-Y');
 	$query = "INSERT INTO transaksi VALUES 
 			('', 
 			'Surat Keterangan Penghasilan Orangtua', 
 			'$nik', 
 			'$user_id', 
+			'$nomor_surat',
 			'$date'
 			)";
 	mysqli_query($conn, $query);
@@ -36,7 +39,7 @@
 		</div>
 		<div class="header text-center mt-1" contenteditable>
 			<h1 class="bold-underlined font14" contenteditable>SURAT KETERANGAN PENGHASILAN</h1>
-			<p contenteditable>Nomor: 470.3041.VII.08.08.<?= romanMonth() ?>.<?= date('Y') ?>
+			<p contenteditable>Nomor: 470.<?= str_pad($nomor_surat, 3, 0, STR_PAD_LEFT) ?>.VII.08.08.<?= romanMonth() ?>.<?= date('Y') ?>
 			</p>
 		</div>
 

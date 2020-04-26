@@ -101,7 +101,7 @@
             </div>
 
             <div class="form-group">
-                <input type="text" class="form-control" name="nama_hiburan" id="nama_hiburan" aria-describedby="helpId" placeholder="Hiburan">
+                <input type="text" class="form-control" name="nama_hiburan" id="nama_hiburan" aria-describedby="helpId" placeholder="Nama Hiburan">
             </div>
 
             <div class="form-group">

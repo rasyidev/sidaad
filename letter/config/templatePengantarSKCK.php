@@ -2,12 +2,15 @@
 	$data = $_POST;
 	$conn = mysqli_connect('localhost', 'root', '', 'sidaad');
 	extract($data);
+	$prev_nomor_surat = mysqli_query($conn, "SELECT nomor_surat FROM `transaksi` order by id_trx desc limit 1");
+	$nomor_surat = (int) $prev_nomor_surat->fetch_row()[0] + 1;
 	$date = date('d-m-Y');
 	$query = "INSERT INTO transaksi VALUES 
 			('', 
 			'Surat Pengantar SKCK', 
 			'$nik', 
 			'$user_id', 
+			'$nomor_surat',
 			'$date'
 			)";
 	mysqli_query($conn, $query);
@@ -40,7 +43,7 @@
 							<p>Nomor</p>
 						</td>
 						<td>
-							<p>: 300/634/ VII.08.08 /<?= romanMonth() ?>/ <?= date('Y') ?></p>
+							<p>: 300/<?= str_pad($nomor_surat, 3, 0, STR_PAD_LEFT) ?>/ VII.08.08 /<?= romanMonth() ?>/ <?= date('Y') ?></p>
 						</td>
 					</tr>
 					<tr height="12px">

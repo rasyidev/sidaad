@@ -1,7 +1,8 @@
+<div class="mb-5"><br></div>
 <footer class="main-footer fixed-bottom">
 	<strong>Built With Love by <a href="#">Anon Dev</a>.</strong>
 	<div class="float-right d-none d-sm-inline-block">
-		<b>v07042020</b>
+		<b>v26042020</b>
 	</div>
 </footer>
 </div>
