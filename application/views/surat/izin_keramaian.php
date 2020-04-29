@@ -10,7 +10,7 @@
                                                                                                                                         } ?>">
             </div>
             <div class="form-group">
-                <input type="text" class="form-control" name="ttl" id="ttl" aria-describedby="helpId" placeholder="Tempat, Tanggal Lahir" value="<?php if ($this->uri->segment(3) == $penduduk['nik']) {
+                <input type="text" class="form-control" name="ttl" id="ttl" aria-describedby="helpId" placeholder="Tempat, Tanggal Lahir. Contoh: Bandar lampung, 21 Maret 1999" value="<?php if ($this->uri->segment(3) == $penduduk['nik']) {
                                                                                                                                                         echo $penduduk['ttl'];
                                                                                                                                                     } ?>">
             </div>

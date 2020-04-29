@@ -18,7 +18,7 @@
         <input type="text" class="form-control" name="nama" id="" aria-describedby="helpId" placeholder="Nama Lengkap">
       </div>
       <div class="form-group col-sm-8">
-        <input type="text" class="form-control" name="ttl" id="ttl" aria-describedby="helpId" placeholder="Tempat, Tanggal Lahir">
+        <input type="text" class="form-control" name="ttl" id="ttl" aria-describedby="helpId" placeholder="Tempat, Tanggal Lahir. Contoh: Bandar lampung, 21 Maret 1999">
         <small>cth: Kutoarjo, 13 April 1995</small>
       </div>
       <div class="form-group col-sm-8">
