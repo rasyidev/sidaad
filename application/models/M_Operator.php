@@ -25,7 +25,12 @@ class M_Operator extends CI_Model{
     $alamat = $this->input->post('alamat');
 
     $data = ['nik' => $nik, 'nama' => $nama, 'ttl' => $ttl, 'agama' => $agama, 'jkel' => $jkel, 'kewarganegaraan' => $kewarganegaraan, 'status' => $status, 'pekerjaan' => $pekerjaan, 'alamat' => $alamat];
-    $this->db->insert('data_penduduk', $data);
+
+    if($this->getSingleData($nik)){
+      return false;
+    }else{
+      $this->db->insert('data_penduduk', $data);
+    }
   }
 
   public function ubahDataPenduduk(){

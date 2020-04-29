@@ -42,10 +42,18 @@ class DataPenduduk extends CI_Controller {
       $this->load->view('form/form_tambah_penduduk');
       $this->load->view('templates/footer_template', $data);
     }else{
-      $this->M_Operator->tambahDataPenduduk();
-    // set flash data
-      $this->session->set_flashdata('flash', 'Ditambahkan');
-      redirect('DataPenduduk');
+      if(!$this->M_Operator->getSingleData($this->input->post('nik')) == null){
+        $this->session->set_flashdata('flash_tambah_gagal', 'Gagal Ditambahkan');
+        echo "<script>
+              alert('NIK Sudah terdaftar!');
+              window.location.href=\"http://localhost/sidaad/DataPenduduk\";
+         </script>";
+      }else{
+        $this->M_Operator->tambahDataPenduduk();
+      // set flash data
+        $this->session->set_flashdata('flash_tambah_berhasil', 'Berhasil Ditambahkan');
+        redirect('DataPenduduk');
+      }
     }
   }
 
@@ -76,9 +84,17 @@ class DataPenduduk extends CI_Controller {
         $this->load->view('ubah_data_penduduk.php', $data);
         $this->load->view('templates/footer_template');
       }else{
-        $this->M_Operator->ubahDataPenduduk();
-        $this->session->set_flashdata('flash_ubah', 'Diubah');
-        redirect('DataPenduduk');
+        if (!$this->M_Operator->getSingleData($this->input->post('nik')) == null) {
+          $this->session->set_flashdata('flash_ubah_gagal', 'Gagal Diubah');
+          echo "<script>
+                alert('NIK Sudah terdaftar!');
+                window.location.href=\"http://localhost/sidaad/DataPenduduk\";
+          </script>";
+        }else{
+          $this->M_Operator->ubahDataPenduduk();
+          $this->session->set_flashdata('flash_ubah', 'Berhasil Diubah');
+          redirect('DataPenduduk');
+        }
       }
   }
 
@@ -87,4 +103,9 @@ class DataPenduduk extends CI_Controller {
     $this->session->set_flashdata('flash_hapus', "dihapus");
     redirect('DataPenduduk');
   }
+
+  // public function test(){
+  //   $tesnik = $this->M_Operator->getSingleData('123242534223');
+  //   var_dump($tesnik); die;
+  // }
 }

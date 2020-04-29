@@ -1,8 +1,32 @@
-<?php if ($this->session->flashdata('flash')) : ?>
+<?php if ($this->session->flashdata('flash_tambah_berhasil')) : ?>
   <div class="row">
     <div class="col-8">
-      <div class="alert alert-warning alert-dismissible fade show" role="alert">
-        Data penduduk berhasil <strong><?= $this->session->flashdata('flash'); ?></strong>
+      <div class="alert alert-sucess alert-dismissible fade show" role="alert">
+        Data penduduk <strong>Berhasil<?= $this->session->flashdata('flash_tambah_berhasil'); ?></strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    </div>
+  </div>
+<?php endif; ?>
+<?php if ($this->session->flashdata('flash_tambah_gagal')) : ?>
+  <div class="row">
+    <div class="col-8">
+      <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        Data penduduk <strong><?= $this->session->flashdata('flash_tambah_gagal'); ?></strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    </div>
+  </div>
+<?php endif; ?>
+<?php if ($this->session->flashdata('flash_ubah_gagal')) : ?>
+  <div class="row">
+    <div class="col-8">
+      <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        Data penduduk <strong><?= $this->session->flashdata('flash_ubah_gagal'); ?></strong>
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -14,7 +38,7 @@
   <div class="row">
     <div class="col-8 m-auto">
       <div class="alert alert-success alert-dismissible fade show" role="alert">
-        Data penduduk berhasil <strong><?= $this->session->flashdata('flash_hapus'); ?></strong>
+        Data penduduk<strong><?= $this->session->flashdata('flash_hapus'); ?></strong>
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -66,10 +90,10 @@
                 <td class="py-1"><?= $p['nik'] ?></td>
                 <td class="py-1"><?= $p['nama'] ?></td>
                 <td class="py-1">
-                  <a href="<?= base_url('DataPenduduk/detail/') . $p['nik'] ?>" class="badge badge-success">detail</a> 
-                  <a href="<?= base_url('DataPenduduk/ubah/') . $p['nik'] ?>" class="badge badge-warning">Ubah</a> 
+                  <a href="<?= base_url('DataPenduduk/detail/') . $p['nik'] ?>" class="badge badge-success">detail</a>
+                  <a href="<?= base_url('DataPenduduk/ubah/') . $p['nik'] ?>" class="badge badge-warning">Ubah</a>
                   <a href="<?= base_url('DataPenduduk/hapus/') . $p['nik'] ?>" title="delete" class="badge badge-danger" onclick="return confirm('Anda akan menghapus penduduk dengan nama <?= $p['nama'] ?>, Apakah Anda yakin?')">Hapus</a>
-								
+
                 </td>
               </tr>
             <?php endforeach; ?>
