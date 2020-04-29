@@ -42,6 +42,7 @@ class Auth extends CI_Controller
   private function _login($username, $password)
   {
     $user = $this->db->get_where('users', ['username' => $username])->row_array();
+    $error = false;
 
     if ($user['username'] == $username && $user['password'] == $password) {
       $data = array(
@@ -53,6 +54,8 @@ class Auth extends CI_Controller
       // echo "dashboard/index"; die;
       $this->session->set_userdata($data);
       redirect('dashboard');
+    }else{
+      $error = true;
     }
   }
 }

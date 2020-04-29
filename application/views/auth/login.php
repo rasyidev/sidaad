@@ -65,6 +65,11 @@
 						<!-- /.col -->
 					</div>
 				</form>
+				<?
+					if($error){?>
+						<script> alert ("Username Atau Password Salah")</script>
+					<?} 
+				?>
 			</div>
 			<!-- /.login-card-body -->
 				<div class="row fixed-bottom position-relative mt-5 pt-5">
