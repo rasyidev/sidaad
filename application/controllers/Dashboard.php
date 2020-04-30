@@ -66,10 +66,22 @@ class Dashboard extends CI_Controller{
       $this->load->view('form/tambah_data_user');
       $this->load->view('templates/footer_template');
     }else{
-      $this->M_Admin->tambahUser();
-      // echo "stop";die;
-      $this->session->set_flashdata('flash', 'Berhasil');
-      redirect('dashboard/tampilUser');
+      $username = $this->input->post('username');
+      $db_username = $this->db->query("Select username from users where username='$username'")->row_array()['username'];
+      // var_dump($username);
+      // var_dump($db_username); die;
+      if($username == $db_username){
+        $this->session->set_flashdata('flash_tambah_gagal', 'Gagal Ditambah');
+        echo "<script>
+                alert('Username Sudah terdaftar, silahkan gunakan username lain!');
+                window.location.href=\"http://localhost/sidaad/Dashboard/tampilUser\";
+          </script>";
+      }else{
+        $this->M_Admin->tambahUser();
+        // echo "stop";die;
+        $this->session->set_flashdata('flash_tambah_berhasil', 'Berhasil');
+        redirect('dashboard/tampilUser');
+      }
     }
   }
 

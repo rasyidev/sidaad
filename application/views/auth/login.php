@@ -66,6 +66,7 @@
 					</div>
 				</form>
 				<?
+				var_dump($error);
 					if($error){?>
 						<script> alert ("Username Atau Password Salah")</script>
 					<?} 

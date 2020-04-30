@@ -8,7 +8,7 @@ class Auth extends CI_Controller
     // kalo session masih ada
     if ($this->session->has_userdata('login')) {
       $this->_loginBack();
-      echo "ada session";
+      // echo "ada session";
       var_dump($this->session->get_userdata());
     }
 
