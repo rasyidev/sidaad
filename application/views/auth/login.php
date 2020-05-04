@@ -1,3 +1,10 @@
+<?php
+// var_dump($_SESSION['login']);die;
+if (isset($_POST['masuk']) && !isset($_SESSION['login'])) { 
+	echo "<script>
+		alert(\"Username Atau Password Salah\")
+	</script>"; }
+?>
 <!DOCTYPE html>
 <html>
 
@@ -13,8 +20,7 @@
 	<!-- Ionicons -->
 	<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 	<!-- icheck bootstrap -->
-	<link rel="stylesheet"
-		href="<?= base_url('assets/vendor/adminlte') ?>plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+	<link rel="stylesheet" href="<?= base_url('assets/vendor/adminlte') ?>plugins/icheck-bootstrap/icheck-bootstrap.min.css">
 	<!-- Theme style -->
 	<link rel="stylesheet" href="<?= base_url('assets/vendor/') ?>css/adminlte.min.css">
 	<link rel="stylesheet" href="<?= base_url('assets/vendor/') ?>css/adminlte.css">
@@ -65,21 +71,15 @@
 						<!-- /.col -->
 					</div>
 				</form>
-				<?
-				var_dump($error);
-					if($error){?>
-						<script> alert ("Username Atau Password Salah")</script>
-					<?} 
-				?>
 			</div>
 			<!-- /.login-card-body -->
-				<div class="row fixed-bottom position-relative mt-5 pt-5">
-					<div class="col-12 justify-content-between px-2 py-1 d-flex">
-						<p>Built With Love by <strong>Anon Dev</strong></p>
-						<p> </p>
-						<p><strong>v07042020</strong></p>
-					</div>
+			<div class="row fixed-bottom position-relative mt-5 pt-5">
+				<div class="col-12 justify-content-between px-2 py-1 d-flex">
+					<p>Built With Love by <strong>Anon Dev</strong></p>
+					<p> </p>
+					<p><strong>v07042020</strong></p>
 				</div>
+			</div>
 		</div>
 
 	</div>
