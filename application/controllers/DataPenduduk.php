@@ -78,23 +78,35 @@ class DataPenduduk extends CI_Controller {
       $this->form_validation->set_rules('nama', 'Nama', 'required');
       $this->form_validation->set_rules('ttl', 'Tempat Tanggal Lahir', 'required');
       $nik = $this->uri->segment(3);
+      // var_dump($nik);die;
+      // var_dump($this->M_Operator->ubahDataPenduduk($nik)); die;
       if ($this->form_validation->run() == FALSE){
         $data['penduduk'] = $this->M_Operator->getSingleData($nik);
         $this->load->view('templates/header_template', $data);
         $this->load->view('ubah_data_penduduk.php', $data);
         $this->load->view('templates/footer_template');
       }else{
-        if (!$this->M_Operator->getSingleData($this->input->post('nik')) == null) {
-          $this->session->set_flashdata('flash_ubah_gagal', 'Gagal Diubah');
+        // var_dump($nik);
+        // var_dump($this->M_Operator->ubahDataPenduduk($nik));die;
+        if ($this->M_Operator->ubahDataPenduduk($nik)==1) {
+          $this->session->set_flashdata('flash_ubah', 'Berhasil Diubah');
+          redirect('DataPenduduk');
+
+        }else if($this->M_Operator->ubahDataPenduduk($nik) == -1){
           echo "<script>
                 alert('NIK Sudah terdaftar!');
                 window.location.href=\"http://localhost/sidaad/DataPenduduk\";
           </script>";
-        }else{
-          $this->M_Operator->ubahDataPenduduk();
-          $this->session->set_flashdata('flash_ubah', 'Berhasil Diubah');
-          redirect('DataPenduduk');
+          $this->session->set_flashdata('flash_ubah_gagal', 'Gagal Diubah');
+          
+          
+        }else if ($this->M_Operator->ubahDataPenduduk($nik) == 0){
+        echo "<script>
+                alert('Tidak ada perubahan data!');
+                window.location.href=\"http://localhost/sidaad/DataPenduduk\";
+          </script>";
         }
+      
       }
   }
 

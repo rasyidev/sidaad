@@ -11,7 +11,7 @@
         </button>
       </div>
     <?php endif; ?>
-    <form action="<?= base_url('DataPenduduk/ubah') ?>" method="post" class="col col-10 col-md-8 ">
+    <form action="<?= base_url('DataPenduduk/ubah/') . $penduduk['nik'] ?>" method="post" class="col col-10 col-md-8 ">
       <div class="form-group">
         <input type="text" class="form-control" name="nik" id="nik" aria-describedby="helpId" placeholder="Nomor Induk Kependudukan" value="<?= $penduduk['nik'] ?>">
       </div>
