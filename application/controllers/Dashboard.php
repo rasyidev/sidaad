@@ -112,9 +112,20 @@ class Dashboard extends CI_Controller{
       $this->load->view('ubah_data_user.php', $data);
       $this->load->view('templates/footer_template');
     } else {
-      $this->M_Admin->ubahUser();
-      $this->session->set_flashdata('flash_ubah', 'Diubah');
-      redirect('dashboard/tampilUser');
+      if($this->M_Admin->ubahUser()==1){
+        $this->session->set_flashdata('flash_ubah', 'Diubah');
+        redirect('dashboard/tampilUser');
+      }elseif ($this->M_Admin->ubahUser() == 0){
+        echo "<script>
+                alert('Tidak ada perubahan data!');
+                window.location.href=\"http://localhost/sidaad/dashboard/tampilUser\";
+          </script>";
+      }
+      elseif($this->M_Admin->ubahUser() == -1){
+        $this->session->set_flashdata('flash_ubah_gagal', 'Gagal Diubah');
+        redirect('dashboard/tampilUser');
+      }
+      
     }
   }
 

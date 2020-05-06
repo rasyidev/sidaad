@@ -17,6 +17,18 @@
 				</div>
 			</div>
 		<?php endif; ?>
+		<?php if ($this->session->flashdata('flash_ubah_gagal')) : ?>
+			<div class="row">
+				<div class="col-8">
+					<div class="alert alert-danger alert-dismissible fade show" role="alert">
+						Data User <strong><?= $this->session->flashdata('flash_ubah_gagal'); ?></strong>. User sudah terdaftar
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+				</div>
+			</div>
+		<?php endif; ?>
 		<?php if ($this->session->flashdata('flash_tambah_berhasil')) : ?>
 			<div class="row">
 				<div class="col-8">

@@ -39,6 +39,7 @@ class M_Admin extends CI_Model{
     // var_dump($data); var_dump($user_id);die;
     $this->db->where('user_id', $user_id);
     $this->db->update('users', $data);
+    return $this->db->affected_rows();
   }
 
   public function hapusUser(){
