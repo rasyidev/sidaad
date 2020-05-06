@@ -1,18 +1,62 @@
 ###################
-What is SIDAAD?
+Apa itu SIDAAD Jatimulyo?
 ###################
 
-*******************
-Release Information
-*******************
-
-This repo contains in-development code for future releases. To download the
-latest stable release please visit the `CodeIgniter Downloads
-<https://codeigniter.com/download>`_ page.
+SIDAAD ataupun Sistem Informasi Dan Aplikasi Administrasi Desa yang merupakan sebuat aplikasi web
+yang berfungsi untuk membantu dan menambah efisiensi dari administrasi di desa jatimulyo.
+Sistem Informasi digunakan untuk membantu kegiatan user perangkant desa yang berkaitan dengan kegiatan sehari-hari di blai desa. 
+Penerapan sistem informasi dapat diterapkan satu arah maupun dua arah, 
+sistem informasi juga dapat diterapkan dengan berbagai macam aplikasi yang ada, 
+salah satunya adalah aplikasi berbasis web. 
 
 **************************
-Changelog and New Features
+apasih latar belakang SIDAAD Jatimulyo dibuat?
 **************************
+Sistem Informasi Dan Aplikasi Administrasi Desa dibuat bedasarkan keresahan dari pihak perangkat desa yang dalam hal ini diwakili oleh Bapak Syaiful Huda selaku Kaur Keuangan desa Jatimulyo,
+ pihal waktu dalam pengurusan surat menyurat di balai desa jatimulyo,dimana waktu yang dibutuhkan dalam membuat suatu surat masih cendering lambat,dimana dalam pembuatan satu surat memakan waktu 10-20 menit.
+ dari maslah diatas maka Anone Dev punya solusinya,SIDAAD jawabnya.mantap enggak tuh.
+
+**************************
+mengapa SIDAAD Jatimulyo berbasis Web?
+**************************
+Aplikasi berbasis web memudahkan pengguna dan development team yang mengerjakan proyek tersebut, 
+selain kemudahan dalam mengakses database, 
+aplikasi berbasis web juga memiliki banyak framework seperti CodeIgniter dan Laravel yang mendukung pembuatan aplikasi berbasis web dibanding aplikasi lainnya, 
+hal ini karena aplikasi berbasis web terus menerus berkembang sesuai dengan kebutuhan pengguna saat ini. 
+Aplikasi berbasis web dibuat dengan struktur berupa HTML dipercantik dengan CSS dan dibuat interaktif dengan Javascript. 
+Banyak dari aplikasi berbasis web memiliki fitur login agar data yang disimpan lebih aman, 
+fitur login ini dapat dibuat dengan menambahkan fungsi session yang dapat membatasi waktu login pengguna, 
+sehingga dapat logout secara otomatis.
+
+*******************
+siapa saja ANONE DEV team?
+*******************
+
+SIDAAD ini dikembangkan oleh team ANONE DEV yang beranggotakan sebagai berikut
+_   Benjamin Feriandes
+-	Habib Abdurrasyid
+-	Adila Gita Risnanda
+-	Reza Octaviany
+-	Rahmat Ginting
+
+dalam pengerjaan aplikasi SIDAAD, team Anone Dev dibimbing langsung oleh Bapak Hafiz Budi Firmansyah, S.Kom., M.Sc.
+selaku dosen pengampu mata kuliah Proyek Prangkat Lunak.
+dan didampingi oleh Annisa Gita Asmara selaku asisten praktikum dalam mata kuliah PPL.
+WOW sekali...!!
+**************************
+Apa saja Fitur yang terdapat di SIDAAD Jatimulyo ?
+**************************
+aplikasi ini memfasilitasi pembuatan bebepa surat yang paling sering dimintakan oleh masyrakat seperti 
+-surat keterangan domisili
+-surat keterangan penghasilan orang tua
+-surat keterangan pengantar skck
+-surat keterangan izin keramaian
+-surat keterangan tidak mampu
+-surat keterangan usaha
+-surat keterangan menikah
+selain itu aplikasi ini juga mampu menampilkan logbook surat surat yang telah dibuat.
+
+
 
 You can find a list of all changes for each release in the `user
 guide change log <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/changelog.rst>`_.

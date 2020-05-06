@@ -41,9 +41,8 @@ class Auth extends CI_Controller
 
   private function _login($username, $password)
   {
-    $user = $this->db->get_where('users', ['username' => $username])->row_array();
     $error = false;
-
+    $user = $this->db->get_where('users', ['username' => $username])->row_array();
     if ($user['username'] == $username && $user['password'] == $password) {
       $data = array(
         'user_id' => $user['user_id'],
